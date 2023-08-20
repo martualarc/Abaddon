@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/menu_principal.unity
+    guid: e9ef40aea3997f043896c9c2b66491b7
+  - enabled: 1
+    path: Assets/escena_principal.unity
+    guid: 63d1b8511d8f02b409ad3f7da37c0e2c
+  - enabled: 1
+    path: Assets/nivel_uno.unity
+    guid: a1d4fa7a398f7fd4a955f20041dda0ac
+  - enabled: 1
+    path: Assets/nivel_dos.unity
+    guid: 0285e3f98ac8cec43817da08e49eaaeb
+  - enabled: 1
+    path: Assets/nivel_tres.unity
+    guid: 0141f09bc4905fe4ea18fc5fc1aa1fad
+  - enabled: 1
+    path: Assets/nivel_cuatro.unity
+    guid: e41c78698f3c14b42b060e36ee072908
+  - enabled: 1
+    path: Assets/nivel_cinco.unity
+    guid: dd0cb99bcaaab87419b631cc7df98de6
+  - enabled: 1
+    path: Assets/nivel_seis.unity
+    guid: 0944a6b5da332fd419b5c98b303a9b43
+  - enabled: 1
+    path: Assets/nivel_siete.unity
+    guid: 59a0fc7f275d16b4c8cc68c56c211b02
+  - enabled: 1
+    path: Assets/nivel_ocho.unity
+    guid: 331e648665e953247a7a721a3e86012d
+  - enabled: 1
+    path: Assets/nivel_nueve.unity
+    guid: 9ba9f146dc3223b478d02b0a7f64038f
+  - enabled: 1
+    path: Assets/nivel_diez.unity
+    guid: 3985f123a71fc59449870db15ee2453c
+  m_configObjects: {}
