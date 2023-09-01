@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerInteract : MonoBehaviour {
 
     public GameObject keyObj;
+    Key scriptKey;
 //keyObj tiene que ser el nombre utilizado en el editor de Unity? No.
 /*
 Nombre en el Inspector: En el Inspector de Unity, cuando agregas el 
@@ -16,7 +17,7 @@ Puedes arrastrar y soltar el GameObject que tiene el script
 
     void Start() {
 //apuntar desde keyObj al componente (script) del objeto de clase Key
-    Key scriptKey = keyObj.GetComponent<Key>
+    scriptKey = keyObj.GetComponent<Key>();
 //initialize door: Door
     }
     void Update() {
@@ -36,22 +37,22 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
         {
+            // Flashlight scriptFlash = hit.collider.GetComponent<Flashlight>();
             Door scriptDoor = hit.collider.GetComponent<Door>();
             if (scriptDoor != null)
             {
-                if (scriptDoor.interact(scriptkey.isKey, scriptKey.num))
+                if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
-                    scriptkey.changeNum(scriptDoor.num);
+                    scriptKey.changeNum(scriptDoor.num);
                     Debug.Log("La puerta se abre");
                 }
                 else {
                     Debug.Log("Eso no es posible");
                 }
             }
-            Flashlight scriptFlash = hit.collider.GetComponent<Flashlight>();
-            else if (scriptFlash != null) {
+           // else if (scriptFlash != null) {
                 //desarrollar
-            }
+           // }
             //interactuar con puzzle
             //otra componente posible para interactuar
         }

@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 
-    int num;
-    bool isOpenable = True;
+    public int num;
+    public bool isOpenable = true;
 
     void Start() {
     
@@ -14,13 +14,13 @@ public class Door : MonoBehaviour {
      
     }
 
-    bool interact(bool keyIsKey, int keyNum) {
+    public bool interact(bool keyIsKey, int keyNum) {
         if(isOpenable && keyIsKey && keyNum == num ) {
-            isOpenable = False;
-            return True;
+            isOpenable = false;
+            return true;
         }
         else {
-            return False;
+            return false;
             //agregar logica para que te avise que te falta la llave o que te diga que ya no se puede entrar
         }
     }
