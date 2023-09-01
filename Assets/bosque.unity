@@ -289,7 +289,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b913b7859c70d9340864e68092ade08e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 2055747560}
   - component: {fileID: 2055747559}
   - component: {fileID: 2055747562}
+  - component: {fileID: 2055747563}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -511,3 +512,16 @@ Skybox:
   m_GameObject: {fileID: 2055747558}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: b4f152e0498484391a9f0d5a1facf03b, type: 2}
+--- !u!114 &2055747563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055747558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4516f537e73eb4cae83bab61e12b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenShotButton: 107
