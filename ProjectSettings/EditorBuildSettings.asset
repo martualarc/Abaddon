@@ -37,8 +37,8 @@ EditorBuildSettings:
     guid: 331e648665e953247a7a721a3e86012d
   - enabled: 1
     path: Assets/nivel_nueve.unity
-    guid: 9ba9f146dc3223b478d02b0a7f64038f
+    guid: 501413dfe5bea2b40a2aa30bffa904a7
   - enabled: 1
-    path: Assets/nivel_diez.unity
-    guid: 3985f123a71fc59449870db15ee2453c
+    path: Assets/escalera_nivel_diez.unity
+    guid: 7c9a7e363b191d041b9a25cb56d03051
   m_configObjects: {}
