@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/bosque.unity
     guid: 63d1b8511d8f02b409ad3f7da37c0e2c
   - enabled: 1
+    path: Assets/hall.unity
+    guid: 7539676997dbe424e8cf1c2b99490c15
+  - enabled: 1
     path: Assets/nivel_uno.unity
     guid: a1d4fa7a398f7fd4a955f20041dda0ac
   - enabled: 1
