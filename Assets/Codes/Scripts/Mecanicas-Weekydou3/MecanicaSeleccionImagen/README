@@ -1,0 +1,5 @@
+El script permite al jugador seleccionar "Cara Real" o "Máscara" y
+muestra un mensaje de resultado. Si la selección es incorrecta,
+el jugador puede intentarlo de nuevo. Cuando se completan todas las imágenes,
+se muestra un mensaje de felicitación. También se incluye una función ReiniciarJuego
+que puede ser llamada desde otros scripts para reiniciar el juego.

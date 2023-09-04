@@ -1,0 +1,5 @@
+Cuando el jugador entra en el área de colisión de la pantalla de hipnosis,
+el temporizador comienza a contar. Si el jugador mantiene la cámara
+centrada en la pantalla de hipnosis durante el tiempo requerido, se completa
+la hipnosis. Si el jugador se distrae y la cámara se aleja de la pantalla,
+el temporizador se reinicia.
