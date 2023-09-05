@@ -32,7 +32,7 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         }
     }
 
-    private void TryInteract()
+    private bool TryInteract()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
@@ -45,16 +45,20 @@ Puedes arrastrar y soltar el GameObject que tiene el script
                 {
                     scriptKey.changeNum(scriptDoor.num);
                     Debug.Log("La puerta se abre");
+                    return true;
                 }
                 else {
                     Debug.Log("Eso no es posible");
+                    return false;
                 }
             }
+            else return false;
            // else if (scriptFlash != null) {
                 //desarrollar
            // }
             //interactuar con puzzle
             //otra componente posible para interactuar
         }
+        else return false;
     }
 }
