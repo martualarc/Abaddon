@@ -1,8 +1,0 @@
-Conexión entre el Script de Movimiento del Jugador (Pacman) y el Script de Manejo del Nivel:
-    En el script de Movimiento del Jugador (Pacman),
-    hay una referencia pública al script de Manejo del Nivel (LevelManager):
-            public LevelManager levelManager;
-    Cuando el jugador completa el camino deseado (la lógica específica depende de tu juego),
-    puedes llamar a la función ShowScreamer() en el script del Pacman,
-    que a su vez llamará a la función en el script del Manejo del Nivel
-    para mostrar el "screamer": 
