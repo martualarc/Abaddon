@@ -10,10 +10,6 @@ public class sceneExit : MonoBehaviour
     public string exitName;
 
 
-    void Start() {
-
-    }
-    
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player")){
             PlayerPrefs.SetString("LastExitName",exitName);

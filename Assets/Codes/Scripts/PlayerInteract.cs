@@ -24,15 +24,17 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         
         if (Input.GetMouseButtonDown(0)) // 0 representa el clic izquierdo del mouse
         {
+            Debug.Log("Click");
             TryInteract();
         }
         if (Input.GetMouseButtonDown(1)) // linterna click derecho
         {
+            Debug.Log("Click derecho");
             // TryFlashlight();
         }
     }
 
-    private bool TryInteract()
+    private void TryInteract()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
@@ -44,21 +46,18 @@ Puedes arrastrar y soltar el GameObject que tiene el script
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
                     scriptKey.changeNum(scriptDoor.num);
+                    //scriptDoor.GetComponent<sceneExit>().CrossDoor(); (para cuando esté implementado interactuar con las puertas)
                     Debug.Log("La puerta se abre");
-                    return true;
                 }
                 else {
                     Debug.Log("Eso no es posible");
-                    return false;
                 }
             }
-            else return false;
            // else if (scriptFlash != null) {
                 //desarrollar
            // }
             //interactuar con puzzle
             //otra componente posible para interactuar
         }
-        else return false;
     }
 }
