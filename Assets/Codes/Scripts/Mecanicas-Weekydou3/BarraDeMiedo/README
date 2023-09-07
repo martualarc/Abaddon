@@ -1,0 +1,4 @@
+Este script contiene una barra de miedo que se llena cuando el personaje
+interactúa con demonios. Cuando el miedo alcanza un cierto nivel,
+el personaje entra en shock y se desmaya. Luego, después de un período de tiempo,
+se recupera del shock.

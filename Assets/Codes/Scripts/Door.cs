@@ -7,7 +7,7 @@ public class Door : MonoBehaviour {
     public bool isOpenable = true;
 
     void Start() {
-    
+        GetComponent<sceneExit>().enabled = false;
     }
     
     void Update() {

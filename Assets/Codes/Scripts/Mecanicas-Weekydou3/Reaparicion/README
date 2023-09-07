@@ -1,0 +1,10 @@
+Colocar GameObjects vacíos en cada habitación de tu juego,
+que servirán como puntos de reaparición. Ubicarlos estratégicamente 
+para que el personaje reaparezca en el lugar correcto.
+
+Añadir una referencia al punto de reaparición actual y
+actualizar esta referencia cuando el personaje se desmaya.
+
+Puedes ajustar el tiempo de espera "tiempoDeReaparicion" 
+antes de que el personaje reaparezca en el punto de reaparición
+para dar una sensación de desvanecimiento y reaparición.

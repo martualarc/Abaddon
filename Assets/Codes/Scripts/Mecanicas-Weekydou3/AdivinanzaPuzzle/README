@@ -1,0 +1,5 @@
+El script permite al jugador ingresar respuestas y
+verifica si son correctas o incorrectas, con un límite de intentos. 
+También muestra mensajes de resultado en función de la respuesta del jugador. 
+Establecer la respuesta correcta en la variable "respuestaCorrecta" y
+el número máximo de intentos en "maximoIntentos"

@@ -3,9 +3,9 @@ using UnityEngine;
 public class AmbientLightController : MonoBehaviour
 {
     public Light ambientLight; // Asigna la luz en el Inspector.
-    public float minIntensity = 0.2f;
-    public float maxIntensity = 1.0f;
-    public float changeInterval = 5.0f;
+    public float minIntensity = 0.1f;
+    public float maxIntensity = 0.4f;
+    public float changeInterval = 0.2f;
 
 
     private float currentIntensity;
