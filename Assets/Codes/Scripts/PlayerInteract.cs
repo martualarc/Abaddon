@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerInteract : MonoBehaviour {
 
+    Collider doorCollider;
     public GameObject keyObj;
     Key scriptKey;
 //keyObj tiene que ser el nombre utilizado en el editor de Unity? No.
@@ -12,7 +13,7 @@ script a un GameObject, verás la variable keyObj en el Inspector.
 Puedes arrastrar y soltar el GameObject que tiene el script
  "MiScript" adjunto en esa variable.
 */
-    [SerializeField] private float interactDistance = 2f;
+    [SerializeField] private float interactDistance = 4f;
     public LayerMask interactLayers;
 
     void Start() {
@@ -41,12 +42,14 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         {
             // Flashlight scriptFlash = hit.collider.GetComponent<Flashlight>();
             Door scriptDoor = hit.collider.GetComponent<Door>();
+            doorCollider = hit.collider.GetComponent<Collider>();
             if (scriptDoor != null)
             {
+                Debug.Log("Es una puerta.");
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
                     scriptKey.changeNum(scriptDoor.num);
-                    //scriptDoor.GetComponent<sceneExit>().CrossDoor(); (para cuando esté implementado interactuar con las puertas)
+                    doorCollider.isTrigger = true;
                     Debug.Log("La puerta se abre");
                 }
                 else {
