@@ -199,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442328915}
   - component: {fileID: 442328914}
+  - component: {fileID: 442328916}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -282,6 +283,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 60, y: 160, z: 0}
+--- !u!114 &442328916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442328913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caab51f613801784fbe15c2a6e7fc237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientLight: {fileID: 442328914}
+  minIntensity: 0.1
+  maxIntensity: 0.4
+  changeInterval: 0.2
 --- !u!1 &524182015
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1374837505}
   - component: {fileID: 1374837504}
+  - component: {fileID: 1374837506}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -887,6 +905,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 60, y: 50, z: 0}
+--- !u!114 &1374837506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374837503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caab51f613801784fbe15c2a6e7fc237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientLight: {fileID: 1374837504}
+  minIntensity: 0.1
+  maxIntensity: 0.4
+  changeInterval: 0.2
 --- !u!1001 &1398712513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1250,6 +1284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084973077}
   - component: {fileID: 2084973076}
+  - component: {fileID: 2084973078}
   m_Layer: 0
   m_Name: Directional Light (3)
   m_TagString: Untagged
@@ -1333,3 +1368,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
+--- !u!114 &2084973078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084973075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caab51f613801784fbe15c2a6e7fc237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientLight: {fileID: 2084973076}
+  minIntensity: 0.1
+  maxIntensity: 0.4
+  changeInterval: 0.2
