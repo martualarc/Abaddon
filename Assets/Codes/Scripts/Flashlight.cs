@@ -25,10 +25,11 @@ public class Flashlight: MonoBehaviour {
         
         if (flashOn == true)
         {
+            flash();
             //la linterna esta encendida
         }
         
-        if (isFlashing == true)
+        if (isFlashing)
         {
             timeNotFlashing = 0;
             timeFlashing += time.deltaTime;
@@ -57,10 +58,8 @@ public class Flashlight: MonoBehaviour {
     //void flash(){
         /*logica de apuntar al demonio
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers)){
-            Demonio scriptDem = hit.collider.GetComponent<Demonio>();
-            DemonioNivelX scriptDemNivelX = hit.collider.GetComponent<DemonioNivelX>()
-            
+        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers)){
+            Demonio scriptDem = hit.collider.GetComponent<Demonio>(); //guarda cualquier objeto con clase heredada de demonio
             if (scriptDem != null)
             {
                 isFlashing = true;
