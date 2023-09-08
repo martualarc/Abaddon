@@ -418,10 +418,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 908748547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196edcebde69e4d48a7d867412af3b18, type: 3}
+  m_Script: {fileID: 11500000, guid: 692ccc07d8b9ad84fb0e5ec72475cfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastExit: uno_entrance
+  lastExit: unoEntrance
 --- !u!4 &908748549
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,11 +1042,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1398712515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9935d578f0bb28c4cb9700793f464254, type: 3}
+  m_Script: {fileID: 11500000, guid: efd24806e36052b40a080fe8d39f01ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: hall
-  exitName: hall_exit1
+  exitName: hallExit1
 --- !u!65 &1398712517
 BoxCollider:
   m_ObjectHideFlags: 0

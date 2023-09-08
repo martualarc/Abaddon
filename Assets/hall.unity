@@ -1052,11 +1052,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 491325368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9935d578f0bb28c4cb9700793f464254, type: 3}
+  m_Script: {fileID: 11500000, guid: efd24806e36052b40a080fe8d39f01ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: nivel_uno
-  exitName: uno_entrance
+  exitName: unoEntrance
 --- !u!1001 &493631882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 527747597}
   - component: {fileID: 527747596}
   m_Layer: 0
-  m_Name: salida_hall1
+  m_Name: hallExit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,10 +1308,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 527747595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196edcebde69e4d48a7d867412af3b18, type: 3}
+  m_Script: {fileID: 11500000, guid: 692ccc07d8b9ad84fb0e5ec72475cfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastExit: hall_exit1
+  lastExit: hallExit1
 --- !u!4 &527747597
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4327144084732578, guid: db58b1eda8133c84983d20108c13888e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.56
+      value: 2.9700005
       objectReference: {fileID: 0}
     - target: {fileID: 4327144084732578, guid: db58b1eda8133c84983d20108c13888e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1367610940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196edcebde69e4d48a7d867412af3b18, type: 3}
+  m_Script: {fileID: 11500000, guid: 692ccc07d8b9ad84fb0e5ec72475cfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lastExit: hallEntrance
@@ -2843,7 +2843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4191678143940642, guid: e4b89a8c642c433459cafbc9259c34a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.56
+      value: 2.97
       objectReference: {fileID: 0}
     - target: {fileID: 4191678143940642, guid: e4b89a8c642c433459cafbc9259c34a2, type: 3}
       propertyPath: m_LocalPosition.z
