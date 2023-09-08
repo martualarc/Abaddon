@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class AdivinanzaPuzzle : MonoBehaviour
 {
-    public string respuestaCorrecta = "RespuestaCorrecta"; // La respuesta correcta que el jugador debe adivinar
+    public string respuestaCorrecta = "Abaddon"; // La respuesta correcta que el jugador debe adivinar
     public InputField inputText; // Referencia al campo de texto en el que el jugador ingresará su respuesta
     public Text mensajeResultado; // Referencia al Text que mostrará el mensaje de resultado
     public Button botonIntentarDeNuevo; // Referencia al botón para intentar de nuevo
