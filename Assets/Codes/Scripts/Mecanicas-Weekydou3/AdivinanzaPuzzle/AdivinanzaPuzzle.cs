@@ -14,7 +14,19 @@ public class AdivinanzaPuzzle : MonoBehaviour
     {
         intentosRestantes = maximoIntentos;
         ActualizarMensajeResultado("");
+        botonIntentarDeNuevo.onClick.AddListener(IntentarDeNuevo);
         botonIntentarDeNuevo.gameObject.SetActive(false);
+
+    }
+
+    void Update(){
+
+         if (Input.GetKeyUp(KeyCode.Return))
+        {
+            Debug.Log("Return key was released.");
+            VerificarRespuesta();
+        }
+
     }
 
     public void VerificarRespuesta()
@@ -22,15 +34,15 @@ public class AdivinanzaPuzzle : MonoBehaviour
         string respuestaIngresada = inputText.text.Trim(); // Obtener la respuesta ingresada por el jugador y eliminar espacios en blanco
         if (respuestaIngresada.Equals(respuestaCorrecta, System.StringComparison.OrdinalIgnoreCase)) // Comparar la respuesta sin importar mayúsculas o minúsculas
         {
-            ActualizarMensajeResultado("¡Respuesta correcta!");
-            DesactivarInputYBoton();
+            ActualizarMensajeResultado("Respuesta correcta!");
         }
         else
         {
             intentosRestantes--;
+            inputText.text = "";
             if (intentosRestantes <= 0)
             {
-                ActualizarMensajeResultado("¡Intentos agotados! La respuesta correcta era: " + respuestaCorrecta);
+                ActualizarMensajeResultado("Intentos agotados!");
                 DesactivarInputYBoton();
             }
             else
@@ -53,6 +65,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
 
     public void IntentarDeNuevo()
     {
+        Debug.Log("Intentar de nuevo");
         intentosRestantes = maximoIntentos;
         inputText.text = "";
         inputText.interactable = true;

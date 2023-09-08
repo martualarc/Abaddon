@@ -1,4 +1,4 @@
-/*
+
 using UnityEngine;
 using System.Collections;
 
@@ -6,7 +6,7 @@ public class FalseFlash: MonoBehaviour {
     public GameObject flashObj;
     Flashlight scriptFlash; //guarda el objeto para su posterior uso (TryFlash)
 
-*/
+}
 /*
 flashObj tiene que ser el nombre utilizado en el editor de Unity? No.
 Nombre en el Inspector: En el Inspector de Unity, cuando agregas el 

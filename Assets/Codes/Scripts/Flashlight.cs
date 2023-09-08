@@ -1,4 +1,4 @@
-/*
+
 using UnityEngine;
 using System.Collections;
 
@@ -14,7 +14,7 @@ public class Flashlight: MonoBehaviour {
     void Update () {
         //rastrear posicion del jugador y actualizar la posicion de la linterna en funcion a ello
     }
-*/
+}
     /*
     funciones que pueden usarse en flash():
     Componente <Demonio>:
