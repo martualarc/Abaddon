@@ -32,7 +32,6 @@ public class HipnosisMecanica : MonoBehaviour
 
     private void CompletarHipnosis()
     {
-        // Aquí puedes colocar el código que se ejecutará cuando el jugador complete la hipnosis con éxito.
         Debug.Log("El jugador ha completado la hipnosis con éxito");
     }
 
