@@ -11,9 +11,13 @@ public class PlayerInteract : MonoBehaviour
     Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
 
     [SerializeField] private float interactDistance = 4f;
-    public LayerMask interactLayers;
+    [SerializeField] private int layer = 5;
+    private int interactLayers;
+
 
     void Start() {
+    interactLayers = (1 << layer);
+    interactLayers = ~interactLayers;
     scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
     }
     void Update() {

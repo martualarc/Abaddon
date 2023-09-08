@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class AdivinanzaPuzzle : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
     public Button botonIntentarDeNuevo; // Referencia al botón para intentar de nuevo
     public int maximoIntentos = 3; // Número máximo de intentos permitidos
     private int intentosRestantes; // Número de intentos restantes
+    public Canvas canvasJuego;
 
     private void Start()
     {
@@ -35,6 +37,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
         if (respuestaIngresada.Equals(respuestaCorrecta, System.StringComparison.OrdinalIgnoreCase)) // Comparar la respuesta sin importar mayúsculas o minúsculas
         {
             ActualizarMensajeResultado("Respuesta correcta!");
+            canvasJuego.gameObject.SetActive(false);
         }
         else
         {
