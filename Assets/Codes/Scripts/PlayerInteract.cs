@@ -1,25 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerInteract : MonoBehaviour {
-
-    Collider doorCollider;
+public class PlayerInteract : MonoBehaviour 
+{
+    Collider doorCollider; 
+    //Si se termina la room llamar a => doorCollider.isTrigger = False
+    //ya que apuntara al collider de la puerta
     public GameObject keyObj;
     Key scriptKey;
-//keyObj tiene que ser el nombre utilizado en el editor de Unity? No.
-/*
-Nombre en el Inspector: En el Inspector de Unity, cuando agregas el 
-script a un GameObject, verás la variable keyObj en el Inspector. 
-Puedes arrastrar y soltar el GameObject que tiene el script
- "MiScript" adjunto en esa variable.
-*/
+    Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
+
     [SerializeField] private float interactDistance = 4f;
     public LayerMask interactLayers;
 
     void Start() {
-//apuntar desde keyObj al componente (script) del objeto de clase Key
-    scriptKey = keyObj.GetComponent<Key>();
-//initialize door: Door
+    scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
     }
     void Update() {
         
@@ -31,7 +26,7 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         if (Input.GetMouseButtonDown(1)) // linterna click derecho
         {
             Debug.Log("Click derecho");
-            // TryFlashlight();
+            TryFlash();
         }
     }
 
@@ -40,12 +35,15 @@ Puedes arrastrar y soltar el GameObject que tiene el script
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
         {
-            // Flashlight scriptFlash = hit.collider.GetComponent<Flashlight>();
             Door scriptDoor = hit.collider.GetComponent<Door>();
-            doorCollider = hit.collider.GetComponent<Collider>();
+            Object scriptObj = hit.collider.GetComponent<Object>();
+            FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
+
             if (scriptDoor != null)
             {
                 Debug.Log("Es una puerta.");
+                doorCollider = hit.collider.GetComponent<Collider>();
+
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
                     scriptKey.changeNum(scriptDoor.num);
@@ -56,11 +54,31 @@ Puedes arrastrar y soltar el GameObject que tiene el script
                     Debug.Log("Eso no es posible");
                 }
             }
-           // else if (scriptFlash != null) {
-                //desarrollar
-           // }
+            /*
+            else if (scriptObj != null) {
+                Debug.Log("Es un objeto.");
+                //scriptObj.interact()
+            }
+            else if(scriptFalseF != null){
+                Debug.Log("Es una linterna.");
+                scriptFlash = scriptFalseF.interact();
+            }
+            */
             //interactuar con puzzle
             //otra componente posible para interactuar
+        }
+    }
+    private void TryFlash()
+    {
+        if(scriptFlash != null)
+        {
+            Debug.Log("Flasheando.");
+            //scriptFlash.flash();
+
+        }
+        else
+        {
+            Debug.Log("Primero debes tener linterna.");
         }
     }
 }
