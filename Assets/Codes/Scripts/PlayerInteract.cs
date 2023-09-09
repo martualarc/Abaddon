@@ -3,34 +3,39 @@ using System.Collections;
 
 public class PlayerInteract : MonoBehaviour 
 {
-    Collider doorCollider; 
-    //Si se termina la room llamar a => doorCollider.isTrigger = False
-    //ya que apuntara al collider de la puerta
+    Collider doorCollider;
     public GameObject keyObj;
     Key scriptKey;
     Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
+    public bool clickOn;
 
     [SerializeField] private float interactDistance = 4f;
     [SerializeField] private int layer = 5;
     private int interactLayers;
 
-
     void Start() {
     interactLayers = (1 << layer);
     interactLayers = ~interactLayers;
     scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
+    clickOn = false;
     }
     void Update() {
         
-        if (Input.GetMouseButtonDown(0)) // 0 representa el clic izquierdo del mouse
+        if (Input.GetMouseButtonDown(0)) // objetos y FFlash (clic izquierdo)
         {
             Debug.Log("Click");
             TryInteract();
         }
-        if (Input.GetMouseButtonDown(1)) // linterna click derecho
+        if (Input.GetMouseButtonDown(1)) // linterna (mantener click derecho)
         {
             Debug.Log("Click derecho");
+            clickOn = true;         
             TryFlash();
+        }
+        else if(scriptFlash != null && clickOn)
+        {   
+            clickOn = false;
+            scriptFlash.flashOn = false;
         }
     }
 
@@ -77,7 +82,7 @@ public class PlayerInteract : MonoBehaviour
         if(scriptFlash != null)
         {
             Debug.Log("Flasheando.");
-            //scriptFlash.flashOn = True;
+            scriptFlash.flashOn = True;
 
         }
         else
