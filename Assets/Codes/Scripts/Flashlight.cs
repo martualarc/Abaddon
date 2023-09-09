@@ -6,7 +6,7 @@ public class Flashlight: MonoBehaviour {
     //inicializar fisicas del raycast y las variables necesarias:
     [SerializeField] private float interactDistance = 4f;
     [SerializeField] private int layer = 5;
-    private int interactLayers;
+    private int demonLayers;
     //creacion de un layer de demonios
     public bool isFlashing;
     public bool flashOn;
@@ -15,7 +15,7 @@ public class Flashlight: MonoBehaviour {
     
     void Start () {
         demonLayers = (1 << layer);
-        demonLayers = ~interactLayers;
+        demonLayers = ~demonLayers;
 
         isFlashing = false;
         timeFlashing = 0;
