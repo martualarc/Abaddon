@@ -14,6 +14,8 @@ public class AdivinanzaPuzzle : MonoBehaviour
 
     private void Start()
     {
+        DesactivarJuego();
+        Invoke("ActivarJuego", 3);
         intentosRestantes = maximoIntentos;
         ActualizarMensajeResultado("");
         botonIntentarDeNuevo.onClick.AddListener(IntentarDeNuevo);
@@ -37,7 +39,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
         if (respuestaIngresada.Equals(respuestaCorrecta, System.StringComparison.OrdinalIgnoreCase)) // Comparar la respuesta sin importar mayúsculas o minúsculas
         {
             ActualizarMensajeResultado("Respuesta correcta!");
-            canvasJuego.gameObject.SetActive(false);
+            Invoke("DesactivarJuego", 3);
         }
         else
         {
@@ -74,5 +76,13 @@ public class AdivinanzaPuzzle : MonoBehaviour
         inputText.interactable = true;
         mensajeResultado.text = "";
         botonIntentarDeNuevo.gameObject.SetActive(false);
+    }
+
+    public void DesactivarJuego(){
+        canvasJuego.gameObject.SetActive(false);
+    }
+
+    public void ActivarJuego(){
+        canvasJuego.gameObject.SetActive(true);
     }
 }
