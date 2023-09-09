@@ -1,0 +1,48 @@
+- Door linea 27: animacion puerta abriendo
+
+- Crear UI para linterna y keys
+
+-Flashlight:
+{
+    -inicializar layerDemon
+    {
+        .Si esta bien inicializado:
+        la linea 59 es suficiente para saber si estas vulnerando un demonio:
+        BORRAR "if (scriptDem != null)"
+        ya que lo unico que podes hitear con el raycast es un demonio:
+        BORRAR  "Demonio scriptDem = hit.collider.GetComponent<Demonio>()"
+
+        .Futura Utilidad: interaccion entre luz/linterna con puzzles etc.
+    }
+    .ideas:
+    {
+        1. collider solo en la parte vulnerable del demonio
+        2. if( distancia-de-la-colision < demonio5.longWarning && 1 )
+           then demonio5.segundosAntesDeMorir --; 
+        2 alternativo. medir angulo del vector flash con respecto al piso
+        3. personalizar para cada demonio desde herencia
+        4. acceso hacia y desde a scripts Demonio
+        5. desde Demonio acceder a timeFlashing o a timeNotFlashing
+    }
+    - agregar particulas de luz + logica render encendido/apagado (linea 29)
+}
+
+-PlayerInteract:
+{
+    - Collider doorCollider; 
+      //Si se termina la room llamar a => doorCollider.isTrigger = False
+      //ya que apuntara al collider de la puerta
+      (linea 6)
+      (Una vez desarrollados los momentos 
+      donde se consigue salir de los rooms / conseguir
+      keys con puzzles o demonios
+      se proseguirá con el desarrollo de doorCollider)
+}
+
+
+-PosData:
+{
+    - Objetos, FalseFlash, Flashlight NO TIENEN NADA EN COMUN
+    - Una vez desarrollado ciertos aspectos
+      se descomentará la logica en playerInteract de Objetos y FalseFlash
+}
