@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: hall
-  exitName: hallExit1
+  exitName: hallExit2
 --- !u!65 &860121574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1717,7 +1717,7 @@ Transform:
   - {fileID: 1013079488}
   - {fileID: 407463645}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1125897381
 PrefabInstance:
