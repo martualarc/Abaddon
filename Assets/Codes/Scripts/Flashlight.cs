@@ -28,7 +28,7 @@ public class Flashlight: MonoBehaviour {
         
         if(flashOn)
         {
-            flash();
+           // flash();
             //renderLuzLinterna = True : la linterna esta encendida
         }
         else
@@ -39,16 +39,16 @@ public class Flashlight: MonoBehaviour {
         if(isFlashing)
         {
             timeNotFlashing = 0;
-            timeFlashing += time.deltaTime;
+            timeFlashing += Time.deltaTime;
         }
         else
         {
             timeFlashing = 0;
-            timeNotFlashing += time.deltaTime;
+            timeNotFlashing += Time.deltaTime;
         }
     }
     
-    void flash(){ //logica de apuntar al demonio
+/*    void flash(){ //logica de apuntar al demonio
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers))
         {
@@ -62,5 +62,5 @@ public class Flashlight: MonoBehaviour {
         {
             isFlashing = false;
         }
-    }
+    }*/
 }

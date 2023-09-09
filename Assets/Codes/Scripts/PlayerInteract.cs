@@ -82,7 +82,7 @@ public class PlayerInteract : MonoBehaviour
         if(scriptFlash != null)
         {
             Debug.Log("Flasheando.");
-            scriptFlash.flashOn = True;
+            scriptFlash.flashOn = true;
 
         }
         else
