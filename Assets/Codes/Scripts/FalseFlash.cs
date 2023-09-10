@@ -19,9 +19,10 @@ Puedes arrastrar y soltar el GameObject que tiene el script
     Renderer flashRender;
 
     void Start(){
+        scriptFlash = flashObj.GetComponent<Flashlight>();
+
         falseRender = gameObject.GetComponent<Renderer>();
         flashRender = flashObj.GetComponent<Renderer>();
-
         flashRender.enabled = false;
     }
 
