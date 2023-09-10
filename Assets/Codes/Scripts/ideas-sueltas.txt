@@ -46,3 +46,10 @@
     - Una vez desarrollado ciertos aspectos
       se descomentará la logica en playerInteract de Objetos y FalseFlash
 }
+
+-Reaparecer:
+{
+    - Utilizar funciones de transporte de escenas implementadas por Martu
+      , ver como no utilizar Collider de la door e igualmente hacer sceneExit.
+    - Crear nueva funcion que le devuelva la key utilizada
+}
