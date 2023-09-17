@@ -1,21 +1,26 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class AudioNivel2 : MonoBehaviour
+public class Audio : MonoBehaviour
 {
-    public AudioClip sonidoAgudo;
-    public AudioClip sonidoSerpiente;
-    public AudioClip sonidoExplosivo;
-
-    void Start()
+    public static IEnumerator SonidoConDuracion(AudioClip clip, float delay, float duracion)
     {
-        StartCoroutine(Sonido(sonidoExplosivo, 4f));
-        StartCoroutine(Sonido(sonidoExplosivo, 19f));
-        StartCoroutine(SonidoConDuracion(sonidoSerpiente, 5f, 14f));
-        StartCoroutine(Sonido(sonidoAgudo, 9f));
+        yield return new WaitForSeconds(delay);
+
+        GameObject sonidoObject = new GameObject("Sonido");
+        AudioSource audioSource = sonidoObject.AddComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.Play();
+        audioSource.loop = true;
+
+        yield return new WaitForSeconds(duracion);
+
+        audioSource.Stop();
+        Destroy(sonidoObject);
     }
 
-    IEnumerator Sonido(AudioClip clip, float delay)
+    public static IEnumerator Sonido(AudioClip clip, float delay)
     {
         yield return new WaitForSeconds(delay);
         GameObject sonidoObject = new GameObject("Sonido");
@@ -24,21 +29,6 @@ public class AudioNivel2 : MonoBehaviour
         audioSource.Play();
 
         yield return new WaitForSeconds(clip.length);
-
-        audioSource.Stop();
-        Destroy(sonidoObject);
-    }
-
-    IEnumerator SonidoConDuracion(AudioClip clip, float delay, float duracion)
-    {
-        yield return new WaitForSeconds(delay);
-
-        GameObject sonidoObject = new GameObject("Sonido");
-        AudioSource audioSource = sonidoObject.AddComponent<AudioSource>();
-        audioSource.clip = clip;
-        audioSource.Play();
-
-        yield return new WaitForSeconds(duracion);
 
         audioSource.Stop();
         Destroy(sonidoObject);

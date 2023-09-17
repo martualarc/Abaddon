@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 211926921}
   - component: {fileID: 211926920}
   - component: {fileID: 211926922}
+  - component: {fileID: 211926923}
   m_Layer: 0
   m_Name: audio
   m_TagString: Untagged
@@ -275,8 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860e0a104619eec4aaa5270ab318fa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoArana: {fileID: 8300000, guid: 91cb1e1833e3ff243b754b8c5f66415f, type: 3}
-  sonidoPunzante: {fileID: 8300000, guid: 1bc32fb1214f5514e9845a0aa3586c6b, type: 3}
 --- !u!4 &211926921
 Transform:
   m_ObjectHideFlags: 0
@@ -387,6 +386,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &211926923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211926919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cce86b6286bed4479dd78869fc76edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoArana: {fileID: 8300000, guid: 91cb1e1833e3ff243b754b8c5f66415f, type: 3}
+  sonidoPunzante: {fileID: 8300000, guid: 1bc32fb1214f5514e9845a0aa3586c6b, type: 3}
 --- !u!1 &226486532
 GameObject:
   m_ObjectHideFlags: 0
