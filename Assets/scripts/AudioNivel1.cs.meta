@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 860e0a104619eec4aaa5270ab318fa18
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sonidoArana: {fileID: 8300000, guid: 91cb1e1833e3ff243b754b8c5f66415f, type: 3}
+  - sonidoPunzante: {fileID: 8300000, guid: 1bc32fb1214f5514e9845a0aa3586c6b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

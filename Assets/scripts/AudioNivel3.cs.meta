@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 50f68bafd73ebac409f8d0a9b36116db
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vozTurbia: {fileID: 8300000, guid: 0dea25484610cb64f8f8a0db9b24428d, type: 3}
+  - sonidoEstatica: {instanceID: 0}
+  - sonidoMecanico: {instanceID: 0}
+  - gritosRoboticos: {instanceID: 0}
+  - gritosAhogo: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 8515832735537094389fd2781ecd7467
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sonidoArana: {instanceID: 0}
+  - sonidoExplosivo: {fileID: 8300000, guid: 298e9635e9e62f94d93d3ca7d7832ebe, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
