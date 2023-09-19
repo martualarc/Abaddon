@@ -39,6 +39,19 @@
       se proseguirá con el desarrollo de doorCollider)
 }
 
+-Reaparecer:
+{
+    - Utilizar funciones de transporte de escenas implementadas por Martu
+      , ver como no utilizar Collider de la door e igualmente hacer sceneExit.
+    - Crear nueva funcion que le devuelva la key utilizada
+}
+
+-Demonio:
+{
+    -Posibles problemas al ejecutar reduceLifeBar desde Update(), debido a que 
+     la iteración del Update depende de la cantidad de frames con la que se visualiza el juego 
+     (menos FPS -> menos iteraciones -> mas cantidad de segundos apuntando al Demonio para vencerlo)
+}
 
 -PosData:
 {
