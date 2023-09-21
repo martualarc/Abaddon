@@ -13,14 +13,14 @@ public class Demonio: MonoBehaviour {
     Vector3 playerDirection;
     
     public GameObject PIntObj; //settear en unity
-    PlayerInteract scriptPInteract;
-    Flashlight scriptFlash;
+    public PlayerInteract scriptPInteract;
+    public Flashlight scriptFlash;
     Key scriptKey;
     //acceso a script BarraDeMiedo
 
     void Start()
     {   
-        scriptPInteract = PIntObj.GetComponent<PlayerInteract>()
+        scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         scriptPInteract.doorCollider.isTrigger = false; //hacer lo mismo con los puzzles
 
         scriptFlash = scriptPInteract.scriptFlash;
@@ -35,8 +35,8 @@ public class Demonio: MonoBehaviour {
         {
             //checkIsNear(); por ahora no
             reduceLifeBar();
-            followPlayer();
-            showLifeBar();
+            //followPlayer();
+            //showLifeBar();
         }
         else if(disappearTime <= 0)
         {
@@ -58,7 +58,7 @@ public class Demonio: MonoBehaviour {
         disappearTime -= 1;
         //reducir visibilidad del render del demonio
     }
-    void followPlayer()
+   /* void followPlayer()
     {
         playerDirection = scriptPInteract.transform - transform.position;
         playerDirection.y = 0; // Ignora la componente vertical
@@ -76,7 +76,7 @@ public class Demonio: MonoBehaviour {
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerDirection), 0.1f);
         }
-    }
+    }*/
     void reduceLifeBar()
     {
         float tF = scriptFlash.timeFlashing;

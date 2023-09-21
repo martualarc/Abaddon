@@ -4,10 +4,9 @@ using System.Collections;
 public class DemonioDiff: Demonio {
     public float maxLifeBar;
 
-    Start()
+    void Start()
     {
-        base.Start();
-        maxLifeBar = lifeBar;
+        maxLifeBar = base.lifeBar;
     }
     void reduceLifeBar()
     {   
@@ -16,7 +15,7 @@ public class DemonioDiff: Demonio {
         {
             scriptFlash.timeFlashing = 0.0f;
             lifeBar -= tF;
-            Debug.Log("-" + tF "segundos");
+            Debug.Log(tF);
         }
         else
         {

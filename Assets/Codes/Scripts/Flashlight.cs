@@ -4,8 +4,8 @@ using System.Collections;
 public class Flashlight: MonoBehaviour {
     //inicializar acceso a scripts de demonios
     //inicializar fisicas del raycast y las variables necesarias:
-    [SerializeField] private float interactDistance = 4f;
-    [SerializeField] private int layer = 5;
+    [SerializeField] private float interactDistance = 8f;
+    [SerializeField] private int layer = 6;
     private int demonLayers;
     //creacion de un layer de demonios
     public bool isFlashing;
@@ -28,7 +28,7 @@ public class Flashlight: MonoBehaviour {
         
         if(flashOn)
         {
-           // flash();
+           flash();
             //renderLuzLinterna = True : la linterna esta encendida
         }
         else
@@ -48,7 +48,7 @@ public class Flashlight: MonoBehaviour {
         }
     }
     
-/*    void flash(){ //logica de apuntar al demonio
+  void flash(){ //logica de apuntar al demonio
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers))
         {
@@ -62,5 +62,5 @@ public class Flashlight: MonoBehaviour {
         {
             isFlashing = false;
         }
-    }*/
+    }
 }

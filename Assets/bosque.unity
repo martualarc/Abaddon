@@ -370,10 +370,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0092f814e28124aae5ca66c8e8c058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorCollider: {fileID: 0}
   keyObj: {fileID: 1130175266}
+  scriptKey: {fileID: 0}
+  scriptFlash: {fileID: 0}
   clickOn: 0
-  interactDistance: 2
-  layer: 5
+  interactDistance: 8
+  layer: 7
 --- !u!114 &145588909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,19 +501,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: canvasUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8841732196162275090, guid: 70fdcaaf2991037409527512a5605bde, type: 3}
+      propertyPath: m_TagString
+      value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841732196666049539, guid: 70fdcaaf2991037409527512a5605bde, type: 3}
+      propertyPath: m_TagString
+      value: UILinterna
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70fdcaaf2991037409527512a5605bde, type: 3}
---- !u!114 &178187525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8841732196666049537, guid: 70fdcaaf2991037409527512a5605bde, type: 3}
-  m_PrefabInstance: {fileID: 178187524}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &178187526 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2077535310, guid: 70fdcaaf2991037409527512a5605bde, type: 3}
@@ -711,6 +711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2
@@ -1073,7 +1077,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 135
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -1431,7 +1435,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1373094165}
   - component: {fileID: 1373094164}
-  - component: {fileID: 1373094163}
   - component: {fileID: 1373094166}
   m_Layer: 0
   m_Name: audio
@@ -1440,19 +1443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1373094163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373094162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a393daa826c4a4598899ab52386359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viento: {fileID: 8300000, guid: fb25ec679d07163499f43b0b5e57aaa3, type: 3}
 --- !u!82 &1373094164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2147,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: linterna
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
+      propertyPath: m_TagString
+      value: Linterna
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
 --- !u!4 &1974781350 stripped
@@ -2168,8 +2162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1974781351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f742b32768b424fb3e846b29dd5d70, type: 3}
+  m_Script: {fileID: 11500000, guid: c94f21415de1c9446bc15f66d4ca6012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashObj: {fileID: 1974781351}
-  flashUI: {fileID: 178187525}
+  interactDistance: 8
+  layer: 6
+  isFlashing: 0
+  flashOn: 0
+  timeFlashing: 0
+  timeNotFlashing: 0

@@ -3,19 +3,18 @@ using System.Collections;
 
 public class PlayerInteract : MonoBehaviour 
 {
-    Collider doorCollider;
+    public Collider doorCollider;
     public GameObject keyObj;
-    Key scriptKey;
-    Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
+    public Key scriptKey;
+    public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
     public bool clickOn;
 
-    [SerializeField] private float interactDistance = 4f;
-    [SerializeField] private int layer = 5;
+    [SerializeField] private float interactDistance = 8f;
+    [SerializeField] private int layer = 7;
     private int interactLayers;
 
     void Start() {
     interactLayers = (1 << layer);
-    interactLayers = ~interactLayers;
     scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
     clickOn = false;
     }
@@ -45,7 +44,7 @@ public class PlayerInteract : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
         {
             Door scriptDoor = hit.collider.GetComponent<Door>();
-            Object scriptObj = hit.collider.GetComponent<Object>();
+            Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
 
             if (scriptDoor != null)
@@ -63,16 +62,16 @@ public class PlayerInteract : MonoBehaviour
                     Debug.Log("Eso no es posible");
                 }
             }
-            /*
-            else if (scriptObj != null) {
-                Debug.Log("Es un objeto.");
-                //scriptObj.interact()
+            
+            else if (scriptNote != null) {
+                Debug.Log("Es una nota.");
+                scriptNote.interact();
             }
             else if(scriptFalseF != null){
                 Debug.Log("Es una linterna.");
                 scriptFlash = scriptFalseF.interact();
             }
-            */
+            
             //interactuar con puzzle
             //otra componente posible para interactuar
         }

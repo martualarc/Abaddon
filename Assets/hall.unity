@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (1)
@@ -538,6 +542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (2)
@@ -905,6 +913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (5)
@@ -975,6 +987,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (6)
@@ -1045,6 +1061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (9)
@@ -1788,6 +1808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 105912, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_Name
       value: key_gold
@@ -2547,6 +2571,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2
@@ -2681,8 +2709,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: linterna
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
+--- !u!1 &1157325339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
+  m_PrefabInstance: {fileID: 1157325338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1157325340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157325339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f742b32768b424fb3e846b29dd5d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1188888202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2872,7 +2921,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3033,6 +3082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (8)
@@ -3317,6 +3370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (7)
@@ -3539,6 +3596,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (4)
@@ -4233,6 +4294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703691397}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2 (3)

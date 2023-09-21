@@ -2352,6 +2352,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9205337210928141357, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -9174950892436234370, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2408,9 +2416,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6048210841801160692, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3581783991986413330, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
       propertyPath: m_Name
       value: disturbia
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f2674244eeae0f448c1509b080196c1, type: 3}

@@ -18,7 +18,7 @@ public class Key : MonoBehaviour {
         isKey = false;
         //funcion que decolorea la key en la interfaz
     }
-    void getKey() { //funcion llamada por realizar puzzles o vencer demonios
+    public void getKey() { //funcion llamada por realizar puzzles o vencer demonios
         isKey = true;
         //funcion que colorea la key en la interfaz
     }
