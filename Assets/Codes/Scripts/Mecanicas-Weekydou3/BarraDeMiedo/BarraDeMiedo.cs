@@ -1,27 +1,57 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BarraDeMiedo : MonoBehaviour
 {
-    public Image barraDeMiedo; // Referencia a la barra de miedo en la interfaz de usuario
-    public int aumentoDeMiedoPorInteraccion = 10; // Cuánto miedo se agrega por cada interacción con un demonio
-    public int maximoMiedo = 100; // El valor máximo de la barra de miedo antes de entrar en shock
-    public ScriptBarraMiedo barra;
-    public int miedoActual = 0;
+    public float fearBar = 0.0f;
+    [SerializeField] public float maxFearBar = 10.0f;
+    public Flashlight scriptFlash;
+    public Door scriptDoor;
+    public GameObject keyObj;
+    public Key scriptKey;
 
+    public GameObject PIntObj;
+    public PlayerInteract scriptPInt;
 
+    public string sceneToLoad;
+    public string exitName;
+
+    void Start()
+    {
+        scriptKey = keyObj.GetComponent<Key>();
+        scriptPInt = PIntObj.GetComponent<PlayerInteract>();
+        scriptFlash = scriptPInt.scriptFlash;
+    }
     private void Update()
     {
-       /* if(!apuntandoDemonio){ 
-             miedoActual += aumentoDeMiedoPorInteraccion;
-            // Actualizar la barra de miedo en la interfaz de usuario
-            ActualizarBarraDeMiedo();
-        }*/ //descomentar cuando esté disponible variable del demonio
+        reaparecer();
+        reduceLifeBar();
     }
 
-    private void ActualizarBarraDeMiedo()
+    private void reaparecer()
     {
-        barra.SetMiedo(miedoActual);
+        if (fearBar >= maxFearBar)
+        {
+            scriptDoor = scriptPInt.doorAccess;
+            scriptDoor.isOpenable = true;
+            scriptKey.keyRespawn();
+            ExitLevel();
+        }
     }
 
+    private void reduceLifeBar()
+    {
+        float tF = scriptFlash.timeNotFlashing;
+        if (tF > 0)
+        {
+            scriptFlash.timeNotFlashing = 0.0f;
+            fearBar += tF; //posible error x no definir valor de fearBar
+        }
+    }
+
+    private void ExitLevel(){
+        PlayerPrefs.SetString("LastExitName",exitName);
+        SceneManager.LoadScene(sceneToLoad);
+    }
 }
