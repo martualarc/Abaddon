@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 8841732195367956363}
   m_Layer: 5
   m_Name: llaveD
-  m_TagString: Untagged
+  m_TagString: UIKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -655,9 +655,11 @@ GameObject:
   - component: {fileID: 8841732196162275087}
   - component: {fileID: 8841732196162275088}
   - component: {fileID: 8841732196162275089}
+  - component: {fileID: 178187529}
+  - component: {fileID: 178187535}
   m_Layer: 5
   m_Name: canvasUI
-  m_TagString: Untagged
+  m_TagString: UICanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,7 +740,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8841732196162275090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -748,6 +750,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &178187529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841732196162275090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c5395dc1fddaf49a6b808d2789182f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &178187535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841732196162275090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c17f0d6082f24428e1e5d96910cafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adivinanza: {fileID: 0}
+  UIElements:
+  - {fileID: 42400123}
+  - {fileID: 8841732196666049539}
+  - {fileID: 799985253}
+  - {fileID: 1630774717}
+  - {fileID: 8841732197067371590}
+  - {fileID: 8841732195367956365}
 --- !u!1 &8841732196666049539
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +795,7 @@ GameObject:
   - component: {fileID: 8841732196666049537}
   m_Layer: 5
   m_Name: linterna
-  m_TagString: Untagged
+  m_TagString: UILinterna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,7 +870,7 @@ GameObject:
   - component: {fileID: 8841732197067371588}
   m_Layer: 5
   m_Name: llave
-  m_TagString: Untagged
+  m_TagString: UIKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

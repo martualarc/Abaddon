@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CanvasManage : MonoBehaviour
 {
     public static CanvasManage instance;
+    private string currentScene;
     void Start()
     {
         if(instance != null){
@@ -20,6 +21,6 @@ public class CanvasManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }

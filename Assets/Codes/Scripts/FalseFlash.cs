@@ -4,7 +4,7 @@ using System.Collections;
 
 public class FalseFlash: MonoBehaviour {
     GameObject flashObj;
-    Image flashUI;
+    GameObject flashUI;
     Flashlight scriptFlash; //guarda el objeto para su posterior uso (TryFlash)
 
 
@@ -14,18 +14,17 @@ public class FalseFlash: MonoBehaviour {
     void Start(){
 
         flashObj = GameObject.FindWithTag("Linterna");
-        flashUI = GameObject.FindWithTag("UILinterna").GetComponent<Image>();
+        flashUI = GameObject.FindWithTag("UILinterna");
         scriptFlash = flashObj.GetComponent<Flashlight>();
 
         //falseRender = gameObject.GetComponent<Renderer>();
         flashRender = flashObj.GetComponent<Renderer>();
         flashRender.enabled = false;
-        flashUI.gameObject.SetActive(false);
     }
 
     public Flashlight interact(){
         //falseRender.enabled = false;
-        flashUI.gameObject.SetActive(true);
+        flashUI.GetComponent<CanvasRenderer>().SetAlpha(1f);
         flashRender.enabled = true; //encender visualizacion del modelado de la linterna in-game
         return scriptFlash;
     }

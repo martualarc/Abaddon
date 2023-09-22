@@ -10,12 +10,12 @@ public class AdivinanzaPuzzle : MonoBehaviour
     public Button botonIntentarDeNuevo; // Referencia al botón para intentar de nuevo
     public int maximoIntentos = 3; // Número máximo de intentos permitidos
     private int intentosRestantes; // Número de intentos restantes
-    public Canvas canvasJuego;
+    public GameObject[] juego;
+    
 
     private void Start()
     {
-        DesactivarJuego();
-        Invoke("ActivarJuego", 3);
+        inputText.interactable = true;
         intentosRestantes = maximoIntentos;
         ActualizarMensajeResultado("");
         botonIntentarDeNuevo.onClick.AddListener(IntentarDeNuevo);
@@ -79,10 +79,9 @@ public class AdivinanzaPuzzle : MonoBehaviour
     }
 
     public void DesactivarJuego(){
-        canvasJuego.gameObject.SetActive(false);
+        foreach(GameObject obj in juego) {
+            obj.SetActive(false);
+            }
     }
 
-    public void ActivarJuego(){
-        canvasJuego.gameObject.SetActive(true);
-    }
 }
