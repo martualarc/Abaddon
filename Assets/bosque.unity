@@ -280,10 +280,9 @@ GameObject:
   - component: {fileID: 145588905}
   - component: {fileID: 145588904}
   - component: {fileID: 145588906}
-  - component: {fileID: 145588908}
   - component: {fileID: 145588907}
   - component: {fileID: 145588909}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -358,25 +357,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &145588908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145588903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0092f814e28124aae5ca66c8e8c058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorCollider: {fileID: 0}
-  keyObj: {fileID: 1130175266}
-  scriptKey: {fileID: 0}
-  scriptFlash: {fileID: 0}
-  clickOn: 0
-  interactDistance: 8
-  layer: 7
 --- !u!114 &145588909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +541,7 @@ GameObject:
   - component: {fileID: 189622917}
   - component: {fileID: 189622919}
   - component: {fileID: 189622918}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,6 +695,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: PTK_Door_Medium_2
@@ -783,6 +767,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c0915e917d68ec4458cb0aeafbeeed95, type: 2}
+    - target: {fileID: 64238601123347584, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 64703080823006624, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -875,7 +863,8 @@ GameObject:
   - component: {fileID: 583316240}
   - component: {fileID: 583316239}
   - component: {fileID: 583316241}
-  m_Layer: 0
+  - component: {fileID: 583316242}
+  m_Layer: 2
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,6 +950,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 100
   player: {fileID: 145588905}
+--- !u!114 &583316242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583316237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0092f814e28124aae5ca66c8e8c058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorCollider: {fileID: 0}
+  keyObj: {fileID: 1130175266}
+  scriptKey: {fileID: 0}
+  scriptFlash: {fileID: 0}
+  clickOn: 0
+  interactDistance: 8
+  layer: 7
 --- !u!1001 &613145659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1404,7 +1412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1356275300}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2136,6 +2144,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
       propertyPath: m_Name
       value: linterna
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e286aa124c939744b8bb1afd4f93f21, type: 3}
       propertyPath: m_TagString

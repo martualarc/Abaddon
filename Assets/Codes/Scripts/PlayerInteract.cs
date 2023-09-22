@@ -43,6 +43,8 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
         {
+             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Did Hit");
             Door scriptDoor = hit.collider.GetComponent<Door>();
             Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
@@ -62,7 +64,6 @@ public class PlayerInteract : MonoBehaviour
                     Debug.Log("Eso no es posible");
                 }
             }
-            
             else if (scriptNote != null) {
                 Debug.Log("Es una nota.");
                 scriptNote.interact();
@@ -74,6 +75,11 @@ public class PlayerInteract : MonoBehaviour
             
             //interactuar con puzzle
             //otra componente posible para interactuar
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
+            Debug.Log("Did not Hit");
         }
     }
     private void TryFlash()
