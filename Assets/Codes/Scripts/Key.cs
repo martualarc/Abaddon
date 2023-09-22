@@ -22,4 +22,9 @@ public class Key : MonoBehaviour {
         isKey = true;
         //funcion que colorea la key en la interfaz
     }
+    
+    public void keyRespawn(){
+        num -= 1;
+        getKey();
+    }
 }
