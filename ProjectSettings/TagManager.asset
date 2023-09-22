@@ -10,6 +10,7 @@ TagManager:
   - UICanvas
   - Door
   - UIKey
+  - Nota
   layers:
   - Default
   - TransparentFX

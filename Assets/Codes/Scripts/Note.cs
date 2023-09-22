@@ -3,7 +3,18 @@ using System.Collections;
 
 public class Note: MonoBehaviour 
 {
+    GameObject nota;
+
+    void Start(){
+
+        nota = GameObject.FindWithTag("Nota");
+    }
+    void Update(){
+        if(Input.GetKeyUp(KeyCode.Escape)){
+            nota.GetComponent<CanvasRenderer>().SetAlpha(0f);
+        }
+    }
     public void interact(){
-        //ej: si es una nota que se muestre una imagen de la nota en la pantalla
+       nota.GetComponent<CanvasRenderer>().SetAlpha(1f);
     }
 }

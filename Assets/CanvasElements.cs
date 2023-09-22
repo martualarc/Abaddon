@@ -7,13 +7,13 @@ public class CanvasElements : MonoBehaviour
 {
     private string currentScene;
     public GameObject adivinanza;
+    public GameObject nota;
     AdivinanzaPuzzle scriptAdivinanza;
     public GameObject[] UIElements;
     void Start()
     {
         scriptAdivinanza = adivinanza.GetComponent<AdivinanzaPuzzle>();
         adivinanza.SetActive(false);
-        
     }
 
     // Update is called once per frame
