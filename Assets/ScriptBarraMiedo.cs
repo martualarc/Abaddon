@@ -10,8 +10,8 @@ public class ScriptBarraMiedo : MonoBehaviour
     {
         playerMiedo = GameObject.FindGameObjectWithTag("Player").GetComponent<BarraDeMiedo>();
         barraMiedo = GetComponent<Slider>();
-        barraMiedo.maxValue = playerMiedo.maximoMiedo;
-        barraMiedo.value = playerMiedo.miedoActual;
+        barraMiedo.maxValue = playerMiedo.maxFearBar;
+        barraMiedo.value = playerMiedo.fearBar;
     }
     public void SetMiedo(int fear)
     {
