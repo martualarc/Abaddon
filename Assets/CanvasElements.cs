@@ -10,6 +10,7 @@ public class CanvasElements : MonoBehaviour
     public GameObject nota;
     AdivinanzaPuzzle scriptAdivinanza;
     public GameObject[] UIElements;
+    
     void Start()
     {
         scriptAdivinanza = adivinanza.GetComponent<AdivinanzaPuzzle>();
@@ -22,10 +23,10 @@ public class CanvasElements : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().name;
         switch(currentScene){
             case "bosque":
-            adivinanza.SetActive(false);
             foreach(GameObject obj in UIElements) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
             }
+            nota.GetComponent<CanvasRenderer>().SetAlpha(0f); 
             break;
 
             case "hall":
@@ -36,6 +37,12 @@ public class CanvasElements : MonoBehaviour
             Invoke("ActivarAdivinanza", 3);
             break;
 
+            case "nivel_dos":
+            foreach(GameObject obj in UIElements) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
+            }
+            break;
+
             default:
             Debug.Log("No pasa nada con la UI.");
             break;
@@ -44,5 +51,6 @@ public class CanvasElements : MonoBehaviour
 
     private void ActivarAdivinanza(){
         adivinanza.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }

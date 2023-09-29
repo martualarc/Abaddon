@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Demonio: MonoBehaviour {
-    [SerializeField] public float lifeBar;
+    [SerializeField] public float lifeBar = 100f;
     public bool isNear;
     //[SerializeField] public int nearDistance;
     [SerializeField] public int disappearTime = 3;
@@ -20,6 +20,7 @@ public class Demonio: MonoBehaviour {
 
     void Start()
     {   
+        PIntObj = GameObject.FindWithTag("MainCamera");
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         scriptPInteract.doorCollider.isTrigger = false; //hacer lo mismo con los puzzles
 
@@ -88,7 +89,7 @@ public class Demonio: MonoBehaviour {
     }
     void killDemon()
     {
-        scriptKey.getKey();
+        //scriptKey.getKey();
         Debug.Log("El demonio ha desaparecido.");
         //animacion
         //create/render note/key

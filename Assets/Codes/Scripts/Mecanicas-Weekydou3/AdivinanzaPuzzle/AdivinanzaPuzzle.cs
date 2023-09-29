@@ -11,6 +11,8 @@ public class AdivinanzaPuzzle : MonoBehaviour
     public int maximoIntentos = 3; // Número máximo de intentos permitidos
     private int intentosRestantes; // Número de intentos restantes
     public GameObject[] juego;
+    public cameraMove cameraScript;
+
     
 
     private void Start()
@@ -20,6 +22,8 @@ public class AdivinanzaPuzzle : MonoBehaviour
         ActualizarMensajeResultado("");
         botonIntentarDeNuevo.onClick.AddListener(IntentarDeNuevo);
         botonIntentarDeNuevo.gameObject.SetActive(false);
+        
+        
 
     }
 
