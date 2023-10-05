@@ -15,16 +15,20 @@ public class Demonio: MonoBehaviour {
     public GameObject PIntObj; //settear en unity
     public PlayerInteract scriptPInteract;
     public Flashlight scriptFlash;
+    private GameObject roomDoor;
+    private Collider dCollider;
     Key scriptKey;
     //acceso a script BarraDeMiedo
 
     void Start()
     {   
         PIntObj = GameObject.FindWithTag("MainCamera");
+        roomDoor = GameObject.FindWithTag("Door");
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
-        scriptPInteract.doorCollider.isTrigger = false; //hacer lo mismo con los puzzles
+        dCollider = roomDoor.GetComponent<Collider>();
+        dCollider.isTrigger = false;
 
-        scriptFlash = scriptPInteract.scriptFlash;
+        scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
         scriptKey = scriptPInteract.scriptKey;
 
         isNear = false;

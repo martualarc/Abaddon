@@ -8,13 +8,18 @@ public class CanvasElements : MonoBehaviour
     private string currentScene;
     public GameObject adivinanza;
     public GameObject nota;
+    public GameObject selecImg;
     AdivinanzaPuzzle scriptAdivinanza;
+    MecanicaSeleccionImagen scriptSeleccion;
+
     public GameObject[] UIElements;
     
     void Start()
     {
         scriptAdivinanza = adivinanza.GetComponent<AdivinanzaPuzzle>();
+        scriptSeleccion = selecImg.GetComponent<MecanicaSeleccionImagen>();
         adivinanza.SetActive(false);
+        selecImg.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,6 +48,10 @@ public class CanvasElements : MonoBehaviour
             }
             break;
 
+            case "nivel_cuatro":
+            Invoke("ActivarSelect", 3);
+            break;
+
             default:
             Debug.Log("No pasa nada con la UI.");
             break;
@@ -51,6 +60,11 @@ public class CanvasElements : MonoBehaviour
 
     private void ActivarAdivinanza(){
         adivinanza.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void ActivarSelect(){
+        selecImg.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
     }
 }

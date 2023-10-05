@@ -1256,6 +1256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1051488925}
     m_Modifications:
+    - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
       value: Door
@@ -1388,6 +1392,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.061687205, y: 1.8432215, z: 0.7756116}
   m_Center: {x: 0.00000023748726, y: 0.9214999, z: -0.38744178}
+--- !u!114 &860121576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860121572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf98e371f31ab0947be54ede0777767e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: 2
+  isOpenable: 1
 --- !u!1001 &880598268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2196,7 +2214,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2002265730}
   - component: {fileID: 2002265729}
-  - component: {fileID: 2002265728}
   - component: {fileID: 2002265731}
   m_Layer: 0
   m_Name: audio
@@ -2205,21 +2222,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2002265728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002265727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8515832735537094389fd2781ecd7467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sonidoAgudo: {fileID: 8300000, guid: 1bc32fb1214f5514e9845a0aa3586c6b, type: 3}
-  sonidoSerpiente: {fileID: 8300000, guid: 3b86aa3143b86634aa7b1a25a58bfab4, type: 3}
-  sonidoExplosivo: {fileID: 8300000, guid: 298e9635e9e62f94d93d3ca7d7832ebe, type: 3}
 --- !u!82 &2002265729
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2232,7 +2234,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.319
   m_Pitch: 1
   Loop: 0
   Mute: 0

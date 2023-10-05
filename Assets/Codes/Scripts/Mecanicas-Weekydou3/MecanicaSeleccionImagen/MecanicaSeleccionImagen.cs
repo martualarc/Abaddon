@@ -10,6 +10,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
     public Sprite[] imagenes; // Array de imágenes que se mostrarán al jugador
     private int indiceImagenActual = 0; // Índice de la imagen actual
     private bool seleccionCorrecta = false; // Indica si la selección fue correcta
+    public GameObject[] juego;
 
     private void Start()
     {
@@ -27,6 +28,9 @@ public class MecanicaSeleccionImagen : MonoBehaviour
 
     private void SeleccionCaraReal()
     {
+        if(indiceImagenActual == 0 || indiceImagenActual == 2 || indiceImagenActual == 6 || indiceImagenActual == 8){
+            seleccionCorrecta = true;
+        }
         if (!seleccionCorrecta)
         {
             mensajeResultado.text = "¡Selección incorrecta! Inténtalo de nuevo.";
@@ -35,10 +39,14 @@ public class MecanicaSeleccionImagen : MonoBehaviour
         {
             SiguienteImagen();
         }
+        seleccionCorrecta = false;
     }
 
     private void SeleccionMascara()
     {
+        if(indiceImagenActual != 0 || indiceImagenActual != 2 || indiceImagenActual != 6 || indiceImagenActual != 8){
+            seleccionCorrecta = true;
+        }
         if (!seleccionCorrecta)
         {
             mensajeResultado.text = "¡Selección incorrecta! Inténtalo de nuevo.";
@@ -47,6 +55,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
         {
             SiguienteImagen();
         }
+        seleccionCorrecta = false;
     }
 
     private void SiguienteImagen()
@@ -61,6 +70,8 @@ public class MecanicaSeleccionImagen : MonoBehaviour
             mensajeResultado.text = "¡Has completado la serie de imágenes!";
             botonCaraReal.interactable = false;
             botonMascara.interactable = false;
+            Invoke("DesactivarJuego", 3);
+
         }
     }
 
@@ -71,5 +82,11 @@ public class MecanicaSeleccionImagen : MonoBehaviour
         botonCaraReal.interactable = true;
         botonMascara.interactable = true;
         ActualizarImagen();
+    }
+
+    public void DesactivarJuego(){
+        foreach(GameObject obj in juego) {
+            obj.SetActive(false);
+            }
     }
 }
