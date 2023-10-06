@@ -13,6 +13,10 @@ public class ScriptBarraMiedo : MonoBehaviour
         barraMiedo.maxValue = playerMiedo.maxFearBar;
         barraMiedo.value = playerMiedo.fearBar;
     }
+    private void Update()
+    {
+        SetMiedo(playerMiedo.fearBar);
+    }
     public void SetMiedo(int fear)
     {
         barraMiedo.value = fear;

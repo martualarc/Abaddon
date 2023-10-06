@@ -53,7 +53,7 @@ public class PlayerInteract : MonoBehaviour
             if (scriptDoor != null)
             {
                 Debug.Log("Es una puerta.");
-                doorAccess = hit.collider.GetComponent<Door>();
+                doorAccess = scriptDoor;
                 doorCollider = hit.collider.GetComponent<Collider>();
 
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
@@ -96,5 +96,9 @@ public class PlayerInteract : MonoBehaviour
         {
             Debug.Log("Primero debes tener linterna.");
         }
+    }
+    public void exitSceneOn()
+    {
+        doorCollider.isTrigger = false;
     }
 }

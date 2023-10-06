@@ -25,6 +25,7 @@ public class Demonio: MonoBehaviour {
         PIntObj = GameObject.FindWithTag("MainCamera");
         roomDoor = GameObject.FindWithTag("Door");
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
+        scriptExitScene = PIntObj.GetComponent<BarraDeMiedo>();
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
 
@@ -97,6 +98,8 @@ public class Demonio: MonoBehaviour {
         Debug.Log("El demonio ha desaparecido.");
         //animacion
         //create/render note/key
+        dCollider.isTrigger = true;
+        scriptExitScene.demonAlive = dCollider;
         //destruir objeto
     }
 }
