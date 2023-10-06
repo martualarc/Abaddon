@@ -48,7 +48,7 @@ public class BarraDeMiedo : MonoBehaviour
         }
     }
 
-    public void ExitLevel(){
+    private void ExitLevel(){
         PlayerPrefs.SetString("LastExitName",exitName);
         SceneManager.LoadScene(sceneToLoad);
     }
