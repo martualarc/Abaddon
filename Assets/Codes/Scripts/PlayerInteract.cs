@@ -97,8 +97,4 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("Primero debes tener linterna.");
         }
     }
-    public void exitSceneOn()
-    {
-        doorCollider.isTrigger = false;
-    }
 }
