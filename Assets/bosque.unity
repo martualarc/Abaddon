@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015108145, g: 0.009049852, b: 0.014056977, a: 1}
+  m_IndirectSpecularColor: {r: 0.015037656, g: 0.009009257, b: 0.013980223, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -668,13 +668,10 @@ MonoBehaviour:
   fearBar: 0
   maxFearBar: 10
   scriptFlash: {fileID: 0}
-  scriptDoor: {fileID: 0}
-  keyObj: {fileID: 0}
-  scriptKey: {fileID: 0}
-  PIntObj: {fileID: 0}
   scriptPInt: {fileID: 0}
-  sceneToLoad: 
-  exitName: 
+  sceneToLoad: hall
+  exitName: hallEntrance
+  demonAlive: {fileID: 0}
 --- !u!1 &181768142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b3912212c22d347b7ee7d7005c54a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 100
+  sensitivity: 300
   player: {fileID: 145588905}
 --- !u!114 &583316242
 MonoBehaviour:

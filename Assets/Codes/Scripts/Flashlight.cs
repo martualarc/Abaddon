@@ -56,11 +56,13 @@ public class Flashlight: MonoBehaviour {
             if (scriptDem != null)
             {
                 isFlashing = true;
+                Debug.Log("Flasheando demonio");
             }
         }
         else
         {
             isFlashing = false;
+            Debug.Log("Flasheando nada");
         }
     }
 }

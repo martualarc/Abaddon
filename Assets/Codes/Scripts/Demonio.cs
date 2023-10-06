@@ -8,10 +8,12 @@ public class Demonio: MonoBehaviour {
     [SerializeField] public int disappearTime = 3;
 
     [SerializeField] public float persecutionVelocity = 2.0f;
-    public float tempVelocity;
-    [SerializeField] public float minDistance = 1.5f;
-    Vector3 playerDirection;
-    
+    [SerializeField] public float range = 3.0f;
+
+    public LayerMask playerMask;
+    private Transform player;
+    private bool checkIsNear;
+
     public GameObject PIntObj; //settear en unity
     public PlayerInteract scriptPInteract;
     public Flashlight scriptFlash;
@@ -25,6 +27,7 @@ public class Demonio: MonoBehaviour {
     {   
         PIntObj = GameObject.FindWithTag("MainCamera");
         roomDoor = GameObject.FindWithTag("Door");
+        player = PIntObj.GetComponent<Transform>();
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         scriptExitScene = PIntObj.GetComponent<BarraDeMiedo>();
         dCollider = roomDoor.GetComponent<Collider>();
@@ -42,7 +45,7 @@ public class Demonio: MonoBehaviour {
         {
             //checkIsNear(); por ahora no
             reduceLifeBar();
-            //followPlayer();
+            followPlayer();
             //showLifeBar();
         }
         else if(disappearTime <= 0)
@@ -65,25 +68,17 @@ public class Demonio: MonoBehaviour {
         disappearTime -= 1;
         //reducir visibilidad del render del demonio
     }
-   /* void followPlayer()
+    void followPlayer()
     {
-        playerDirection = scriptPInteract.transform - transform.position;
-        playerDirection.y = 0; // Ignora la componente vertical
-        if (playerDirection.magnitude < minDistance)
+        checkIsNear = Physics.CheckSphere(transform.position,range,playerMask);
+        Vector3 playerPos = new Vector3(player.position.x,transform.position.y,player.position.z);
+        transform.LookAt(playerPos);
+
+        if(checkIsNear == false)
         {
-            tempVelocity = tempVelocity * 0.8f;
+        transform.position = Vector3.MoveTowards(transform.position,playerPos,persecutionVelocity * Time.deltaTime);
         }
-        else
-        {
-            tempVelocity = persecutionVelocity;
-        }
-        transform.Translate(playerDirection * tempVelocity * Time.deltaTime, Space.World);
-        // La velocidad se multiplica por Time.deltaTime para hacerlo frame rate independiente (que en 30 fps no sea mas facil)
-        if (direccionAlJugador != Vector3.zero) //Ver si funciona: mirar hacia la dirección del jugador
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerDirection), 0.1f);
-        }
-    }*/
+    }
     void reduceLifeBar()
     {
         float tF = scriptFlash.timeFlashing;
