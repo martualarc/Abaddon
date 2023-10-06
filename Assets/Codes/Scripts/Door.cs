@@ -6,11 +6,6 @@ public class Door : MonoBehaviour {
     public int num;
     public bool isOpenable = true;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     void Start() {
         GetComponent<sceneExit>().enabled = false;
     }

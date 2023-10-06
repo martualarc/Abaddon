@@ -53,12 +53,4 @@ public class BarraDeMiedo : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col==demonAlive)
-        {
-            scriptPInt.doorCollider.isTrigger = false;
-            ExitLevel();
-        }
-    }
 }

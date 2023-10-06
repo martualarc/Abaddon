@@ -17,6 +17,7 @@ public class Demonio: MonoBehaviour {
     public Flashlight scriptFlash;
     private GameObject roomDoor;
     private Collider dCollider;
+    private BarraDeMiedo scriptExitScene;
     Key scriptKey;
     //acceso a script BarraDeMiedo
 

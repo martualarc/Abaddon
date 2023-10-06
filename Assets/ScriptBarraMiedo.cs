@@ -17,7 +17,7 @@ public class ScriptBarraMiedo : MonoBehaviour
     {
         SetMiedo(playerMiedo.fearBar);
     }
-    public void SetMiedo(int fear)
+    public void SetMiedo(float fear)
     {
         barraMiedo.value = fear;
     }
