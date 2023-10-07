@@ -8,11 +8,12 @@ public class Key : MonoBehaviour
     public bool isKey;
 
     private GameObject keyIcon; // referencia al objeto del icono de la llave en la interfaz
+    public AudioClip keySound;
 
     void Start()
     {
         // buscar el objeto del icono de la llave en la interfaz por su nombre
-        keyIcon = GameObject.Find("KeyIcon"); // asegurarse de que el nombre coincida con el objeto en tu escena
+        keyIcon = GameObject.FindWithTag("UIKey"); // asegurarse de que el nombre coincida con el objeto en tu escena
 
         if (keyIcon == null)
         {
@@ -36,7 +37,7 @@ public class Key : MonoBehaviour
     public void collectKey()
     {
         // reproducir un sonido de recogida
-        AudioManager.Instance.PlayCollectKeySound();
+        StartCoroutine(Audio.Sonido(keySound, 0f));
         // mostrar un mensaje en la consola
         Debug.Log("¡Has recogido la llave #" + num);
 
