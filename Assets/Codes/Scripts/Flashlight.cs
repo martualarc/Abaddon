@@ -12,6 +12,7 @@ public class Flashlight: MonoBehaviour {
     public bool flashOn;
     public float timeFlashing;
     public float timeNotFlashing;
+    private Light spot;
     
     void Start () {
         demonLayers = (1 << layer);
@@ -21,6 +22,7 @@ public class Flashlight: MonoBehaviour {
         timeFlashing = 0;
         timeNotFlashing = 0;
         flashOn = false;
+        spot = GameObject.FindWithTag("Light").GetComponent<Light>();
         //rastrear posicion del jugador y actualizar la posicion de la linterna en funcion a ello
     }
     
@@ -28,12 +30,15 @@ public class Flashlight: MonoBehaviour {
         
         if(flashOn)
         {
+
            flash();
+           spot.enabled = true;
             //renderLuzLinterna = True : la linterna esta encendida
         }
         else
         {
             isFlashing = false;
+            spot.enabled = false;
         }
         
         if(isFlashing)

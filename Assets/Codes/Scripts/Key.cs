@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Key : MonoBehaviour
 {
@@ -7,12 +8,13 @@ public class Key : MonoBehaviour
     public int num;
     public bool isKey;
 
-    private GameObject keyIcon; // referencia al objeto del icono de la llave en la interfaz
+    private Image keyIcon; // referencia al objeto del icono de la llave en la interfaz
+    public AudioClip keySound;
 
     void Start()
     {
         // buscar el objeto del icono de la llave en la interfaz por su nombre
-        keyIcon = GameObject.Find("KeyIcon"); // asegurarse de que el nombre coincida con el objeto en tu escena
+        keyIcon = GameObject.FindWithTag("UIKey").GetComponent<Image>(); // asegurarse de que el nombre coincida con el objeto en tu escena
 
         if (keyIcon == null)
         {
@@ -36,7 +38,7 @@ public class Key : MonoBehaviour
     public void collectKey()
     {
         // reproducir un sonido de recogida
-        AudioManager.Instance.PlayCollectKeySound();
+        StartCoroutine(Audio.Sonido(keySound, 0f));
         // mostrar un mensaje en la consola
         Debug.Log("¡Has recogido la llave #" + num);
 
@@ -52,6 +54,7 @@ public class Key : MonoBehaviour
     public void getKey()
     {
         isKey = true;
+        keyIcon.GetComponent<CanvasRenderer>().SetAlpha(1f);
 
         //funcion llamada por realizar puzzles o vencer demonios
         //funcion que colorea la key en la interfaz

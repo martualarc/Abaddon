@@ -9,6 +9,8 @@ public class PlayerInteract : MonoBehaviour
     public Key scriptKey;
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
     public bool clickOn;
+    private GameObject transportObject;
+    private Collider transportCollider;
 
     [SerializeField] private float interactDistance = 8f;
     [SerializeField] private int layer = 7;
@@ -18,6 +20,8 @@ public class PlayerInteract : MonoBehaviour
     interactLayers = (1 << layer);
     scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
     clickOn = false;
+    transportObject = GameObject.FindWithTag("Transport");
+    transportCollider = transportObject.GetComponent<Collider>();
     }
     void Update() {
         
@@ -52,6 +56,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (scriptDoor != null)
             {
+                
                 Debug.Log("Es una puerta.");
                 doorAccess = scriptDoor;
                 doorCollider = hit.collider.GetComponent<Collider>();
@@ -59,7 +64,7 @@ public class PlayerInteract : MonoBehaviour
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
                     scriptKey.changeNum(scriptDoor.num);
-                    doorCollider.isTrigger = true;
+                    transportCollider.isTrigger = true;
                     Debug.Log("La puerta se abre");
                 }
                 else {

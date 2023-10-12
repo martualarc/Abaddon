@@ -11,6 +11,8 @@ TagManager:
   - Door
   - UIKey
   - Nota
+  - Transport
+  - Light
   layers:
   - Default
   - TransparentFX

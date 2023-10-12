@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
 
     void Start()
     {
-        GetComponent<sceneExit>().enabled = false;
+        
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
         if (isOpenable && keyIsKey && keyNum == num)
         {
             isOpenable = false;
-            OpenDoor(); // Llamamos a la función para abrir la puerta
+            openDoor(); // Llamamos a la función para abrir la puerta
             return true;
         }
         else
