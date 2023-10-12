@@ -7,7 +7,7 @@ public class Demonio: MonoBehaviour {
     //[SerializeField] public int nearDistance;
     [SerializeField] public int disappearTime = 3;
 
-    [SerializeField] public float persecutionVelocity = 2.0f;
+    [SerializeField] public float persecutionVelocity = 0.5f;
     [SerializeField] public float range = 3.0f;
 
     public LayerMask playerMask;
@@ -85,7 +85,7 @@ public class Demonio: MonoBehaviour {
         if(tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar -= tF; //posible error x no definir valor de lifeBar
+            lifeBar -= (2*tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()

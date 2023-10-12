@@ -9,19 +9,25 @@ public class PlayerInteract : MonoBehaviour
     public Key scriptKey;
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
     public bool clickOn;
+    private Demonio scriptDem;
+
     private GameObject transportObject;
     private Collider transportCollider;
 
     [SerializeField] private float interactDistance = 8f;
     [SerializeField] private int layer = 7;
+    [SerializeField] private int layerD = 6;
+    private int demonLayers;
     private int interactLayers;
 
     void Start() {
     interactLayers = (1 << layer);
+    demonLayers = (1 << layerD);
     scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
     clickOn = false;
     transportObject = GameObject.FindWithTag("Transport");
     transportCollider = transportObject.GetComponent<Collider>();
+
     }
     void Update() {
         
@@ -30,7 +36,7 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("Click");
             TryInteract();
         }
-        if (Input.GetMouseButtonDown(1)) // linterna (mantener click derecho)
+        if (Input.GetMouseButton(1)) // linterna (mantener click derecho)
         {
             Debug.Log("Click derecho");
             clickOn = true;         
@@ -85,16 +91,34 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
+            Debug.DrawRay(transform.position, transform.forward, Color.white, 5);
             Debug.Log("Did not Hit");
         }
     }
+
     private void TryFlash()
     {
         if(scriptFlash != null)
         {
             Debug.Log("Flasheando.");
             scriptFlash.flashOn = true;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers))
+            {
+                Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+                scriptDem = hit.collider.GetComponent<Demonio>(); //guarda cualquier objeto con clase heredada de demonio
+                if (scriptDem != null)
+                {
+                    scriptFlash.isFlashing = true;
+                    Debug.Log("Flasheando demonio");
+                }
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
+                scriptFlash.isFlashing = false;
+                Debug.Log("Flasheando nada");
+            }
 
         }
         else

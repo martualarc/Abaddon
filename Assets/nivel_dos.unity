@@ -279,7 +279,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -372,7 +372,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -612,7 +612,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2057,7 +2057,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 8308075036335164042}
   - component: {fileID: 3344351575696355977}
   - component: {fileID: 7203524491656720160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: capa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2487,7 +2487,7 @@ GameObject:
   - component: {fileID: 2070703605366329773}
   - component: {fileID: 3279442885999840909}
   - component: {fileID: 728462675394454119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2505,7 @@ GameObject:
   - component: {fileID: 3154813873688388318}
   - component: {fileID: 806806808833637890}
   - component: {fileID: 7805776359215194915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: alas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2523,7 +2523,7 @@ GameObject:
   - component: {fileID: 3596520483348383515}
   - component: {fileID: 4225142808330493347}
   - component: {fileID: 4225142808330493346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: disturbiasc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2541,8 +2541,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89097226, y: 1, z: 0.8130948}
-  m_Center: {x: 0.45451385, y: 5.5, z: -0.844246}
+  m_Size: {x: 1.0633329, y: 1.1698055, z: 0.9601723}
+  m_Center: {x: 0.41584393, y: 5.3946104, z: -0.91778475}
 --- !u!114 &4225142808330493347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   lifeBar: 100
   isNear: 0
   disappearTime: 3
-  persecutionVelocity: 2
+  persecutionVelocity: 0.5
   range: 3
   playerMask:
     serializedVersion: 2
@@ -2736,7 +2736,7 @@ GameObject:
   - component: {fileID: 4504416298157232838}
   - component: {fileID: 7346398183204854409}
   - component: {fileID: 6114694934054103993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: modelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
