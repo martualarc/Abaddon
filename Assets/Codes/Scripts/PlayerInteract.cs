@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlayerInteract : MonoBehaviour 
 {
-    public Door doorAccess;
-    public Collider doorCollider;
     public GameObject keyObj;
     public Key scriptKey;
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
@@ -65,9 +63,6 @@ public class PlayerInteract : MonoBehaviour
             if (scriptDoor != null)
             {
                 Debug.Log("Es una puerta.");
-                doorAccess = scriptDoor;
-                doorCollider = hit.collider.GetComponent<Collider>();
-
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
                     scriptKey.changeNum(scriptDoor.num);
