@@ -46,7 +46,7 @@ public class BarraDeMiedo : MonoBehaviour
         if (tF > 0)
         {
             scriptFlash.timeNotFlashing = 0.0f;
-            fearBar += (2*tF);
+            fearBar += (3*tF);
         }
     }
 
