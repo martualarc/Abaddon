@@ -24,6 +24,7 @@ public class PlayerInteract : MonoBehaviour
     void Start() {
         interactLayers = (1 << layer);
         demonLayers = (1 << layerD);
+        keyObj = GameObject.FindWithTag("Key");
         scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
         clickOn = false;
         transportObject = GameObject.FindWithTag("Transport");

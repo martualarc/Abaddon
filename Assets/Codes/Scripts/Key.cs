@@ -37,7 +37,7 @@ public class Key : MonoBehaviour
     public void collectKey()
     {
         // reproducir un sonido de recogida
-        StartCoroutine(Audio.Sonido(keySound, 0f));
+        //StartCoroutine(Audio.Sonido(keySound, 0f));
         // mostrar un mensaje en la consola
         Debug.Log("¡Has recogido la llave #" + num);
 
@@ -52,6 +52,7 @@ public class Key : MonoBehaviour
     }
     public void getKey()
     {
+         Debug.Log("¡Has recogido la llave #" + num);
         isKey = true;
         keyIcon.GetComponent<CanvasRenderer>().SetAlpha(1f);
 

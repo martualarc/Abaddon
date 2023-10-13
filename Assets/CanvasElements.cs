@@ -9,6 +9,7 @@ public class CanvasElements : MonoBehaviour
     public GameObject adivinanza;
     public GameObject nota;
     public GameObject selecImg;
+
     AdivinanzaPuzzle scriptAdivinanza;
     MecanicaSeleccionImagen scriptSeleccion;
 
@@ -21,6 +22,9 @@ public class CanvasElements : MonoBehaviour
         scriptSeleccion = selecImg.GetComponent<MecanicaSeleccionImagen>();
         adivinanza.SetActive(false);
         selecImg.SetActive(false);
+        foreach(GameObject obj in UIElements) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
+            }
     }
 
     // Update is called once per frame
@@ -29,15 +33,13 @@ public class CanvasElements : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().name;
         switch(currentScene){
             case "bosque":
-            foreach(GameObject obj in UIElements) {
-            obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
-            }
+            
             nota.GetComponent<CanvasRenderer>().SetAlpha(0f); 
             break;
 
             case "hall":
             adivinanza.SetActive(false);
-            foreach(GameObject obj in UIElements) {
+            foreach(GameObject obj in UIBarras) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
             }
             break;

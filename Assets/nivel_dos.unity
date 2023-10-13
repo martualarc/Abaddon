@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demonio: {fileID: 4225142808330493345}
+  barraDemon: {fileID: 0}
 --- !u!4 &505024775
 Transform:
   m_ObjectHideFlags: 0
@@ -2357,7 +2358,7 @@ GameObject:
   - component: {fileID: 4225142808330493346}
   m_Layer: 6
   m_Name: disturbiasc
-  m_TagString: Untagged
+  m_TagString: Demon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2387,14 +2388,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4653b1f891e389458d4e9e70e99865f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: 100
+  lifeBar: 0
+  maxlifeBar: 100
   isNear: 0
-  disappearTime: 3
+  disappearTime: 10
   persecutionVelocity: 0.5
-  range: 3
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  range: 4
   PIntObj: {fileID: 0}
   scriptPInteract: {fileID: 0}
   scriptFlash: {fileID: 0}

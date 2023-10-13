@@ -5,11 +5,14 @@ public class SpawnNivel2 : MonoBehaviour
     public GameObject demonio;
     private BarraDeMiedo bMiedo;
     private Flashlight scriptFlash;
+    public ScriptBarraDemon barraDemon;
 
     void Start()
     {
         bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
         bMiedo.enabled = true;
+
+        barraDemon = GameObject.Find("barraDemon").GetComponent<ScriptBarraDemon>();
 
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
 
@@ -36,5 +39,6 @@ public class SpawnNivel2 : MonoBehaviour
         demonio.SetActive(true);
         bMiedo.demonAlive = true;
         scriptFlash.demonAlive = true;
+        barraDemon.enabled = true;
     }
 }

@@ -2,10 +2,11 @@ using UnityEngine;
 using System.Collections;
 
 public class Demonio: MonoBehaviour {
-    [SerializeField] public float lifeBar = 100f;
+    [SerializeField] public float lifeBar = 0f;
+    public float maxlifeBar = 100f;
     public bool isNear;
     //[SerializeField] public int nearDistance;
-    [SerializeField] public int disappearTime = 3;
+    [SerializeField] public int disappearTime = 10;
 
     [SerializeField] public float persecutionVelocity = 0.5f;
     [SerializeField] public float range = 4f;
@@ -19,8 +20,10 @@ public class Demonio: MonoBehaviour {
     public Flashlight scriptFlash;
     private GameObject roomDoor;
     private Collider dCollider;
-    Key scriptKey;
     //acceso a script BarraDeMiedo
+
+    private BarraDeMiedo bMiedo;
+
 
     void Start()
     {   
@@ -31,9 +34,9 @@ public class Demonio: MonoBehaviour {
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
     
+        bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
 
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
-        scriptKey = scriptPInteract.scriptKey;
 
         isNear = false;
         interactLayers = (1 << layer);
@@ -57,7 +60,8 @@ public class Demonio: MonoBehaviour {
     bool checkIsAlive()
     {
        if(lifeBar <= 0)
-       {
+       {    
+            bMiedo.demonAlive = true;
             disappear();
             return false;
        }
@@ -85,16 +89,16 @@ public class Demonio: MonoBehaviour {
         if(tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar -= (3*tF); //posible error x no definir valor de lifeBar
+            lifeBar += (3*tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()
     {
         //scriptKey.getKey();
-        Debug.Log("El demonio ha desaparecido.");
         //animacion
         //create/render note/key
         dCollider.isTrigger = true;
+        gameObject.SetActive(false);
         //destruir objeto
     }
 }

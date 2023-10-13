@@ -2372,6 +2372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   isKey: 0
+  keySound: {fileID: 0}
 --- !u!1 &620751171
 GameObject:
   m_ObjectHideFlags: 0
