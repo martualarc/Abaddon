@@ -64,7 +64,6 @@ public class PlayerInteract : MonoBehaviour
 
             if (scriptDoor != null)
             {
-                
                 Debug.Log("Es una puerta.");
                 doorAccess = scriptDoor;
                 doorCollider = hit.collider.GetComponent<Collider>();
