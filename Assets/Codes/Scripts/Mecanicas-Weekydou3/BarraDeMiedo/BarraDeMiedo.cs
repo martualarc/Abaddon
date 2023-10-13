@@ -5,25 +5,27 @@ using UnityEngine.UI;
 public class BarraDeMiedo : MonoBehaviour
 {
     public float fearBar = 0.0f;
-    [SerializeField] public float maxFearBar = 10.0f;
-    GameObject thisObj;
+    [SerializeField] public float maxFearBar = 100f;
+    PlayerInteract pInteract;
     public Flashlight scriptFlash;
-    public PlayerInteract scriptPInt;
 
+    private sceneExit getStrings;
     public string sceneToLoad;
     public string exitName;
 
-    public Collider demonAlive;
+    public bool demonAlive = false;
 
     void Start()
     {
-        thisObj = this.gameObject;
-        scriptPInt = thisObj.GetComponent<PlayerInteract>();
-        scriptFlash = scriptPInt.scriptFlash;
+        pInteract = GameObject.FindWithTag("MainCamera").GetComponent<PlayerInteract>();
+        scriptFlash = pInteract.scriptFlash;
+        getStrings = GameObject.FindWithTag("Door").GetComponent<sceneExit>();
     }
     private void Update()
     {
-        if(demonAlive==null)
+        sceneToLoad = getStrings.sceneToLoad;
+        exitName = getStrings.exitName;
+        if(demonAlive)
         {
             reaparecer();
             reduceLifeBar();  
@@ -44,13 +46,14 @@ public class BarraDeMiedo : MonoBehaviour
         if (tF > 0)
         {
             scriptFlash.timeNotFlashing = 0.0f;
-            fearBar += tF;
+            fearBar += (2*tF);
         }
     }
 
     private void ExitLevel(){
         PlayerPrefs.SetString("LastExitName",exitName);
         SceneManager.LoadScene(sceneToLoad);
+        demonAlive = false;
     }
 
 }

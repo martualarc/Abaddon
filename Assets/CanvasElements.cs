@@ -13,6 +13,7 @@ public class CanvasElements : MonoBehaviour
     MecanicaSeleccionImagen scriptSeleccion;
 
     public GameObject[] UIElements;
+    public GameObject[] UIBarras;
     
     void Start()
     {
@@ -36,14 +37,17 @@ public class CanvasElements : MonoBehaviour
 
             case "hall":
             adivinanza.SetActive(false);
+            foreach(GameObject obj in UIElements) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
+            }
             break;
 
             case "nivel_uno":
-            Invoke("ActivarAdivinanza", 21f);
+            Invoke("ActivarAdivinanza", 11f);
             break;
 
             case "nivel_dos":
-            foreach(GameObject obj in UIElements) {
+            foreach(GameObject obj in UIBarras) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
             }
             break;

@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
     public bool clickOn;
     private Demonio scriptDem;
+    BarraDeMiedo playerBarra;
 
     private GameObject transportObject;
     private Collider transportCollider;
@@ -21,12 +22,12 @@ public class PlayerInteract : MonoBehaviour
     private int interactLayers;
 
     void Start() {
-    interactLayers = (1 << layer);
-    demonLayers = (1 << layerD);
-    scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
-    clickOn = false;
-    transportObject = GameObject.FindWithTag("Transport");
-    transportCollider = transportObject.GetComponent<Collider>();
+        interactLayers = (1 << layer);
+        demonLayers = (1 << layerD);
+        scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
+        clickOn = false;
+        transportObject = GameObject.FindWithTag("Transport");
+        transportCollider = transportObject.GetComponent<Collider>();
 
     }
     void Update() {

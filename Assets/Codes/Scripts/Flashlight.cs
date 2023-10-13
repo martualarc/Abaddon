@@ -11,7 +11,7 @@ public class Flashlight: MonoBehaviour {
     public float timeFlashing;
     public float timeNotFlashing;
     private Light spot;
-    
+    public bool demonAlive;
     
     
     void Start () {
@@ -44,7 +44,9 @@ public class Flashlight: MonoBehaviour {
         else
         {
             timeFlashing = 0;
-            timeNotFlashing += Time.deltaTime;
+            if(demonAlive){
+                timeNotFlashing += Time.deltaTime;
+            }
         }
     }
     

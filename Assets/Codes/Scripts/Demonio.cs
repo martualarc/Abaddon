@@ -8,9 +8,9 @@ public class Demonio: MonoBehaviour {
     [SerializeField] public int disappearTime = 3;
 
     [SerializeField] public float persecutionVelocity = 0.5f;
-    [SerializeField] public float range = 3.0f;
-
-    public LayerMask playerMask;
+    [SerializeField] public float range = 4f;
+    private int layer = 8;
+    private int interactLayers;
     private Transform player;
     private bool checkIsNear;
 
@@ -19,7 +19,6 @@ public class Demonio: MonoBehaviour {
     public Flashlight scriptFlash;
     private GameObject roomDoor;
     private Collider dCollider;
-    private BarraDeMiedo scriptExitScene;
     Key scriptKey;
     //acceso a script BarraDeMiedo
 
@@ -29,14 +28,15 @@ public class Demonio: MonoBehaviour {
         roomDoor = GameObject.FindWithTag("Door");
         player = PIntObj.GetComponent<Transform>();
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
-        scriptExitScene = PIntObj.GetComponent<BarraDeMiedo>();
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
+    
 
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
         scriptKey = scriptPInteract.scriptKey;
 
         isNear = false;
+        interactLayers = (1 << layer);
     }
 
     void Update()
@@ -70,7 +70,7 @@ public class Demonio: MonoBehaviour {
     }
     void followPlayer()
     {
-        checkIsNear = Physics.CheckSphere(transform.position,range,playerMask);
+        checkIsNear = Physics.CheckSphere(transform.position, range, interactLayers);
         Vector3 playerPos = new Vector3(player.position.x,transform.position.y,player.position.z);
         transform.LookAt(playerPos);
 
@@ -85,7 +85,7 @@ public class Demonio: MonoBehaviour {
         if(tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar -= (2*tF); //posible error x no definir valor de lifeBar
+            lifeBar -= (3*tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()
@@ -95,7 +95,6 @@ public class Demonio: MonoBehaviour {
         //animacion
         //create/render note/key
         dCollider.isTrigger = true;
-        scriptExitScene.demonAlive = dCollider;
         //destruir objeto
     }
 }

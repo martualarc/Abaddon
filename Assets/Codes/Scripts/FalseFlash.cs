@@ -19,7 +19,6 @@ public class FalseFlash: MonoBehaviour {
 
         //falseRender = gameObject.GetComponent<Renderer>();
         flashRender = flashObj.GetComponent<Renderer>();
-        flashRender.enabled = false;
     }
 
     public Flashlight interact(){

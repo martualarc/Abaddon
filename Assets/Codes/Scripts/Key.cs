@@ -23,7 +23,6 @@ public class Key : MonoBehaviour
         else
         {
             // el objeto del icono de la llave fue encontrado
-            Debug.Log("¡Objeto del icono de la llave encontrado!");
         }
 
         //apuntar hacia el objeto del icono de la key en la interfaz
