@@ -59,12 +59,12 @@ public class Demonio: MonoBehaviour {
     
     bool checkIsAlive()
     {
-       if(lifeBar <= 0)
+       if(lifeBar >= 100)
        {    
-            bMiedo.demonAlive = true;
             disappear();
             return false;
        }
+       bMiedo.demonAlive = true;
        return true;
     }
     void disappear()
@@ -89,7 +89,7 @@ public class Demonio: MonoBehaviour {
         if(tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar += (3*tF); //posible error x no definir valor de lifeBar
+            lifeBar += (4*tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()

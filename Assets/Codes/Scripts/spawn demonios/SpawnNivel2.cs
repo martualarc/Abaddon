@@ -17,7 +17,7 @@ public class SpawnNivel2 : MonoBehaviour
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
 
         demonio.SetActive(false);
-        Invoke("Spawnear", 10f);
+        Invoke("Spawnear", 7f);
     }
 
     void Spawnear()

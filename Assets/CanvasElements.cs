@@ -45,7 +45,7 @@ public class CanvasElements : MonoBehaviour
             break;
 
             case "nivel_uno":
-            Invoke("ActivarAdivinanza", 11f);
+            Invoke("ActivarAdivinanza", 6f);
             break;
 
             case "nivel_dos":
@@ -54,8 +54,14 @@ public class CanvasElements : MonoBehaviour
             }
             break;
 
+            case "nivel_tres":
+            foreach(GameObject obj in UIBarras) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
+            }
+            break;
+
             case "nivel_cuatro":
-            Invoke("ActivarSelect", 11f);
+            Invoke("ActivarSelect", 6f);
             break;
 
             default:
