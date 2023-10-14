@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerInteract : MonoBehaviour 
 {
-    public GameObject keyObj;
     public Key scriptKey;
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
     public bool clickOn;
@@ -22,8 +21,7 @@ public class PlayerInteract : MonoBehaviour
     void Start() {
         interactLayers = (1 << layer);
         demonLayers = (1 << layerD);
-        keyObj = GameObject.FindWithTag("Key");
-        scriptKey = keyObj.GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
+        scriptKey = GameObject.FindWithTag("Player").GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
         clickOn = false;
         transportObject = GameObject.FindWithTag("Transport");
         transportCollider = transportObject.GetComponent<Collider>();
@@ -63,6 +61,7 @@ public class PlayerInteract : MonoBehaviour
             Door scriptDoor = hit.collider.GetComponent<Door>();
             Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
+            TangibleKey tangKey = hit.collider.GetComponent<TangibleKey>();
 
             if (scriptDoor != null)
             {
@@ -76,6 +75,10 @@ public class PlayerInteract : MonoBehaviour
                 else {
                     Debug.Log("Eso no es posible");
                 }
+            }
+            else if (tangKey != null) {
+                tangKey.destroy();
+                scriptKey.getKey();
             }
             else if (scriptNote != null) {
                 Debug.Log("Es una nota.");

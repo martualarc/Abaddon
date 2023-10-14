@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Key : MonoBehaviour
 {
 
-    public int num;
+    public int num = 1;
     public bool isKey;
 
     private Image keyIcon; // referencia al objeto del icono de la llave en la interfaz
@@ -15,15 +15,9 @@ public class Key : MonoBehaviour
     {
         keyIcon = GameObject.FindWithTag("UIKey").GetComponent<Image>();
         //apuntar hacia el objeto del icono de la key en la interfaz
+
     }
 
-    public void collectKey()
-    {
-        // reproducir un sonido de recogida
-        //StartCoroutine(Audio.Sonido(keySound, 0f));
-        Debug.Log("¡Has recogido la llave #" + num);
-        // función en PlayerInteract para recoger la llave
-    }
     public void changeNum(int nextDoor)
     {
         num = nextDoor + 1;
@@ -44,6 +38,6 @@ public class Key : MonoBehaviour
     {
         num -= 1;
         getKey();
-        //funcion llamada al reaparecer, falta la logica de la door
+        //funcion llamada al reaparecer
     }
 }

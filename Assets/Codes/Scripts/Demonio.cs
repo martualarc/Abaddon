@@ -20,8 +20,8 @@ public class Demonio: MonoBehaviour {
     public Flashlight scriptFlash;
     private GameObject roomDoor;
     private Collider dCollider;
-    //acceso a script BarraDeMiedo
 
+    private TangibleKey tangKey;
     private BarraDeMiedo bMiedo;
 
 
@@ -35,6 +35,7 @@ public class Demonio: MonoBehaviour {
         dCollider.isTrigger = false;
     
         bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
+        tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
 
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
 
@@ -94,9 +95,9 @@ public class Demonio: MonoBehaviour {
     }
     void killDemon()
     {
-        //scriptKey.getKey();
-        //animacion
-        //create/render note/key
+        //animacion/particulas
+        tangKey.finishRoom();
+        //posible render note
         dCollider.isTrigger = true;
         gameObject.SetActive(false);
         //destruir objeto
