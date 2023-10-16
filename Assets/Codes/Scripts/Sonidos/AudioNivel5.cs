@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class AudioNivel5 : MonoBehaviour
 {
@@ -8,31 +7,37 @@ public class AudioNivel5 : MonoBehaviour
     public AudioClip Zumbido;
 
     private bool audioReproducido = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         StartCoroutine(Audio.SonidoConDuracion(gritosMujer, 0f, 12f));
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
     {
         if (!audioReproducido)
         {
-            GameObject disturbiaObj = GameObject.Find("disturbia");
-            if (disturbiaObj != null)
+            GameObject demonioObj = GameObject.Find("doubulia");
+            if (demonioObj != null)
             {
-                StartCoroutine(Audio.Sonido(gritosMujerFuertes, 0f));
+                audioSource.clip = gritosMujerFuertes;
+                audioSource.loop = true;
+                audioSource.Play();
                 audioReproducido = true;
             }
         }
 
         if (audioReproducido)
         {
-            GameObject disturbiaObj = GameObject.Find("disturbia");
-            if (disturbiaObj == null)
+            GameObject demonioObj = GameObject.Find("doubulia");
+            if (demonioObj == null)
             {
-                StartCoroutine(Audio.Sonido(Zumbido, 0f));
-                audioReproducido = false;
+                audioSource.Stop();
+                audioSource.clip = Zumbido;
+                audioSource.Play();
+                audioSource.loop = true;
             }
         }
     }
