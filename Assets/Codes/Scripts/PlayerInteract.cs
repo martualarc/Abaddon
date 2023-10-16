@@ -68,6 +68,8 @@ public class PlayerInteract : MonoBehaviour
                 Debug.Log("Es una puerta.");
                 if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                 {
+                    tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
+                    tangKey.destroy()
                     scriptKey.changeNum(scriptDoor.num);
                     transportCollider.isTrigger = true;
                     Debug.Log("La puerta se abre");
