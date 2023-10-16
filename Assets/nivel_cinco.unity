@@ -1964,6 +1964,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gritosMujer: {fileID: 8300000, guid: e75096ac672e8eb4683630af9eefcd11, type: 3}
+  gritosMujerFuertes: {fileID: 8300000, guid: 483bb72b7964ba04aa5ec6db1b855331, type: 3}
+  Zumbido: {fileID: 8300000, guid: 60e9cdd34710fde4490582baa9cff077, type: 3}
 --- !u!114 &1860213958
 MonoBehaviour:
   m_ObjectHideFlags: 0
