@@ -50,23 +50,5 @@ public class Flashlight: MonoBehaviour {
         }
     }
     
-  /*void flash(){ //logica de apuntar al demonio
-        RaycastHit hit;
-        if (Physics.Raycast(cameraPlayer.transform.position, cameraPlayer.transform.forward, out hit, interactDistance, demonLayers))
-        {
-            Debug.DrawRay(cameraPlayer.transform.position, cameraPlayer.transform.forward * hit.distance, Color.yellow);
-            scriptDem = hit.collider.GetComponent<Demonio>(); //guarda cualquier objeto con clase heredada de demonio
-            if (scriptDem != null)
-            {
-                isFlashing = true;
-                Debug.Log("Flasheando demonio");
-            }
-        }
-        else
-        {
-            Debug.DrawRay(cameraPlayer.transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
-            isFlashing = false;
-            Debug.Log("Flasheando nada");
-        }
-    }*/
+
 }

@@ -41,6 +41,8 @@ public class Demonio: MonoBehaviour {
 
         isNear = false;
         interactLayers = (1 << layer);
+
+        bMiedo.demonAlive = true;
     }
 
     void Update()
@@ -63,9 +65,10 @@ public class Demonio: MonoBehaviour {
        if(lifeBar >= 100)
        {    
             disappear();
+            bMiedo.demonAlive = false;
+            scriptFlash.demonAlive = false;
             return false;
        }
-       bMiedo.demonAlive = true;
        return true;
     }
     void disappear()
