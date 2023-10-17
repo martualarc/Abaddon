@@ -54,7 +54,7 @@ public class CanvasElements : MonoBehaviour
             }
             break;
 
-            case "nivel_tres":
+            case "nivel_cinco":
             foreach(GameObject obj in UIBarras) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
             }
