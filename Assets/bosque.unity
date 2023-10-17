@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015108145, g: 0.009049852, b: 0.014056977, a: 1}
+  m_IndirectSpecularColor: {r: 0.015108361, g: 0.0090516135, b: 0.014057632, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 145588906}
   - component: {fileID: 145588907}
   - component: {fileID: 145588909}
+  - component: {fileID: 145588908}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -653,6 +654,21 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &145588908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145588903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845be303c89253b49b5f2df71fd66dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: 1
+  isKey: 0
+  keySound: {fileID: 0}
 --- !u!114 &145588909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_TagString
-      value: Door
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1874730244689182, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
       propertyPath: m_Name
@@ -1916,9 +1932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0092f814e28124aae5ca66c8e8c058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorAccess: {fileID: 0}
-  doorCollider: {fileID: 0}
-  keyObj: {fileID: 1130175266}
   scriptKey: {fileID: 0}
   scriptFlash: {fileID: 0}
   clickOn: 0
@@ -2953,11 +2966,11 @@ GameObject:
   - component: {fileID: 1130175268}
   m_Layer: 7
   m_Name: KeyOutside
-  m_TagString: Key
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1130175267
 Transform:
   m_ObjectHideFlags: 0
@@ -2979,7 +2992,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130175266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 845be303c89253b49b5f2df71fd66dbe, type: 3}
   m_Name: 
@@ -3963,25 +3976,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786266942292529}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.05332653, y: 1.8432215, z: 0.7742227}
   m_Center: {x: 0.0041782325, y: 0.92149967, z: -0.38674727}
---- !u!114 &1718964610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786266942292529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf98e371f31ab0947be54ede0777767e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  num: 0
-  isOpenable: 1
 --- !u!1 &1734472162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4401,6 +4400,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1786267039922906, guid: a5050ce036dee2d4d9287249a1e60440, type: 3}
   m_PrefabInstance: {fileID: 452114667}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1786266942292531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786266942292529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd24806e36052b40a080fe8d39f01ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: hall
+  exitName: hallEntrance
 --- !u!4 &543450651758797390
 Transform:
   m_ObjectHideFlags: 0

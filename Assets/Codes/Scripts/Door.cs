@@ -4,24 +4,12 @@ using System.Collections;
 public class Door : MonoBehaviour
 {
 
-    public int num;
-    public bool isOpenable = true;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
+    [SerializeField] public int num;
 
     public bool interact(bool keyIsKey, int keyNum)
     {
-        if (isOpenable && keyIsKey && keyNum == num)
+        if (keyIsKey && keyNum == num)
         {
-            isOpenable = false;
             openDoor(); // Llamamos a la función para abrir la puerta
             return true;
         }
@@ -38,5 +26,5 @@ public class Door : MonoBehaviour
         // animación simple: abrir la puerta girándola sobre su eje Y durante 1 segundo.
         transform.Rotate(Vector3.up, 90f, Space.World);
     }
-    //void openDoor funcion que realiza la animacion de abrirla
+    
 }

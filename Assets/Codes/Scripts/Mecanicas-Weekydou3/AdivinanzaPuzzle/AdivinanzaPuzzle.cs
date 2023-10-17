@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class AdivinanzaPuzzle : MonoBehaviour
 {
-    public string respuestaCorrecta = "Abbadon"; // La respuesta correcta que el jugador debe adivinar
+    public string respuestaCorrecta = "Abaddon"; // La respuesta correcta que el jugador debe adivinar
     public InputField inputText; // Referencia al campo de texto en el que el jugador ingresará su respuesta
     public Text mensajeResultado; // Referencia al Text que mostrará el mensaje de resultado
     public Button botonIntentarDeNuevo; // Referencia al botón para intentar de nuevo
@@ -12,6 +12,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
     private int intentosRestantes; // Número de intentos restantes
     public GameObject[] juego;
     public cameraMove cameraScript;
+    public TangibleKey tangKey;
 
     
 
@@ -23,8 +24,6 @@ public class AdivinanzaPuzzle : MonoBehaviour
         botonIntentarDeNuevo.onClick.AddListener(IntentarDeNuevo);
         botonIntentarDeNuevo.gameObject.SetActive(false);
         
-        
-
     }
 
     void Update(){
@@ -44,6 +43,9 @@ public class AdivinanzaPuzzle : MonoBehaviour
         {
             ActualizarMensajeResultado("Respuesta correcta!");
             Invoke("DesactivarJuego", 3);
+            
+            tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
+            tangKey.finishRoom();
         }
         else
         {
