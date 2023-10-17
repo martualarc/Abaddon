@@ -268,6 +268,7 @@ MonoBehaviour:
   - {fileID: 663681874}
   - {fileID: 562008919}
   cameraScript: {fileID: 583316241}
+  tangKey: {fileID: 0}
 --- !u!1 &89305844
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   isKey: 0
-  keySound: {fileID: 0}
+  keySound: {fileID: 8300000, guid: 91a1f67cd899526488e7fb9793e535af, type: 3}
 --- !u!114 &145588909
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     public int num = 1;
     public bool isKey;
 
-    private Image keyIcon; // referencia al objeto del icono de la llave en la interfaz
+    private Image keyIcon; // referencia al objeto del icono de la llave en la interfaz 
     public AudioClip keySound;
 
     void Start()
@@ -29,6 +29,8 @@ public class Key : MonoBehaviour
         Debug.Log("¡Has recogido la llave #" + num);
         isKey = true;
         keyIcon.GetComponent<CanvasRenderer>().SetAlpha(1f);
+        // reproducir un sonido de recogida
+        StartCoroutine(Audio.Sonido(keySound, 0f));
 
         //funcion llamada por realizar puzzles o vencer demonios
         //funcion que colorea la key en la interfaz
