@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class HipnosisMecanica : MonoBehaviour
 {
@@ -6,10 +7,12 @@ public class HipnosisMecanica : MonoBehaviour
     private float tiempoActual; // Tiempo transcurrido
 
     public Camera viewCamera;
-
+    private TangibleKey tangKey;
     private void Start()
     {
         tiempoActual = 0f;
+        viewCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
     }
 
     private void Update()
@@ -40,6 +43,7 @@ public class HipnosisMecanica : MonoBehaviour
             if (hipnoVid != null)
             {
                 //esta mirando el video
+                Debug.Log("Mirando");
                 return true;
             }
             else
@@ -55,6 +59,7 @@ public class HipnosisMecanica : MonoBehaviour
     private void CompletarHipnosis()
     {
         Debug.Log("El jugador ha completado la hipnosis con éxito");
+        tangKey.finishRoom();
         // Agrega aquí la lógica para completar la hipnosis según tus requerimientos
     }
 }
