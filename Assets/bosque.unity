@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573905c0c62cd3d49a7966fe1337f876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respuestaCorrecta: Abbadon
+  respuestaCorrecta: Abaddon
   inputText: {fileID: 181768146}
   mensajeResultado: {fileID: 663681876}
   botonIntentarDeNuevo: {fileID: 1539594086}
