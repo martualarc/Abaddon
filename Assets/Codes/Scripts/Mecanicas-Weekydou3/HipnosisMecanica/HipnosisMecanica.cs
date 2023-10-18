@@ -40,12 +40,12 @@ public class HipnosisMecanica : MonoBehaviour
             if (hipnoVid != null)
             {
                 //esta mirando el video
-                return true
+                return true;
             }
             else
             {
                 //no esta mirando el video
-                return false
+                return false;
             }
         }
         //no esta mirando el video
