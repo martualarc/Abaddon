@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1775789, g: 0.22232264, b: 0.30451772, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757908, g: 0.22232303, b: 0.30451867, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434192, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.26
+      value: -15.22
       objectReference: {fileID: 0}
     - target: {fileID: 434192, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.z
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437362, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.44
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 437362, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.z
@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438974, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.36
+      value: -11.32
       objectReference: {fileID: 0}
     - target: {fileID: 438974, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.z
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 467586, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.86
+      value: -14.82
       objectReference: {fileID: 0}
     - target: {fileID: 467586, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.z
@@ -619,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487278, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.26
+      value: -15.22
       objectReference: {fileID: 0}
     - target: {fileID: 487278, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.z
@@ -705,9 +705,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 10876068, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8784314
+      objectReference: {fileID: 0}
     - target: {fileID: 11456478, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: Duration
-      value: 5
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 11456478, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: StopTime
@@ -715,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11456478, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: StartTime
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 11456478, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: AudioSource
@@ -729,13 +733,17 @@ PrefabInstance:
       propertyPath: ForceRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11496392, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+      propertyPath: Seed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 19822242, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: lengthInSec
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19822242, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: startDelay.scalar
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 19822242, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -763,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19824636, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: startDelay.scalar
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 19824636, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: startDelay.minScalar
@@ -795,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19861520, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: startDelay.scalar
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 19861520, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: InitialModule.size3D
@@ -803,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19861520, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 19861520, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: InitialModule.startSize.minScalar
@@ -2201,6 +2209,8 @@ GameObject:
   - component: {fileID: 2024838398}
   - component: {fileID: 2024838397}
   - component: {fileID: 2024838396}
+  - component: {fileID: 2024838401}
+  - component: {fileID: 2024838402}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2319,6 +2329,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024838401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024838395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0965cec2fa880d04f8db836306a03b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2024838402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024838395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547c9347cf66d7148a1b79f97732122b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 2024838396}
+  fadingScript: {fileID: 2024838401}
 --- !u!1001 &2119160005
 PrefabInstance:
   m_ObjectHideFlags: 0
