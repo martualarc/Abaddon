@@ -5,8 +5,8 @@ public class Door : MonoBehaviour
 {
 
     [SerializeField] public bool puertaPar = false;
-    [SerializeField] public float xpos = 0.65f;
-    [SerializeField] public float zpos = 0.05f;
+    [SerializeField] public float xpos = 1.5f;
+    [SerializeField] public float zpos = 1.3f;
 
     Vector3 newPosition;
 
@@ -35,11 +35,12 @@ public class Door : MonoBehaviour
         // animación simple: abrir la puerta girándola sobre su eje Y durante 1 segundo.
         if(puertaPar)
         {
-            newPosition.x = xpos;
-            newPosition.z =  -(newPosition.z) - zpos;
+            newPosition.x =  newPosition.x - zpos;
+            newPosition.z = newPosition.z - xpos;
             transform.position = newPosition;
+            transform.Rotate(Vector3.up, 90f, Space.World);
         }
-        transform.Rotate(Vector3.up, 90f, Space.World);
+        else transform.Rotate(Vector3.up, 90f, Space.World);
     }
     
 }
