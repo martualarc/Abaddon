@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class DemonioDiff: Demonio {
-    public float maxLifeBar;
+    private float maxLifeBar;
 
     void Start()
     {

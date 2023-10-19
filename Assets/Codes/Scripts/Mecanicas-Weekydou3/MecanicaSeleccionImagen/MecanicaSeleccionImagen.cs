@@ -11,6 +11,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
     private int indiceImagenActual = 0; // Índice de la imagen actual
     private bool seleccionCorrecta = false; // Indica si la selección fue correcta
     public GameObject[] juego;
+    private TangibleKey tangKey;
 
     private void Start()
     {
@@ -70,8 +71,9 @@ public class MecanicaSeleccionImagen : MonoBehaviour
             mensajeResultado.text = "¡Has completado la serie de imágenes!";
             botonCaraReal.interactable = false;
             botonMascara.interactable = false;
+            tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
+            tangKey.finishRoom();
             Invoke("DesactivarJuego", 3);
-
         }
     }
 
