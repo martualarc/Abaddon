@@ -91,7 +91,7 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.forward, Color.white, 5);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
             Debug.Log("Did not Hit");
         }
     }
