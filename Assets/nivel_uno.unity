@@ -4076,7 +4076,8 @@ MonoBehaviour:
   cubo3: {fileID: 489871980}
   cubo4: {fileID: 1642317401}
   cubo5: {fileID: 206342221}
-  puzzle: {fileID: 511105021}
+  llave: {fileID: 1066584233}
+  "ara\xF1as": {fileID: 1763996938}
 --- !u!4 &1168125782
 Transform:
   m_ObjectHideFlags: 0

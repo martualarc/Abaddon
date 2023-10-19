@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015108361, g: 0.0090516135, b: 0.014057632, a: 1}
+  m_IndirectSpecularColor: {r: 0.015108145, g: 0.009049852, b: 0.014056977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 76592509}
   m_Layer: 2
   m_Name: adivinanza
-  m_TagString: Untagged
+  m_TagString: AdivinanzaPuzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   - {fileID: 562008919}
   cameraScript: {fileID: 583316241}
   tangKey: {fileID: 0}
+  ganoPuzzle: 0
 --- !u!1 &89305844
 GameObject:
   m_ObjectHideFlags: 0

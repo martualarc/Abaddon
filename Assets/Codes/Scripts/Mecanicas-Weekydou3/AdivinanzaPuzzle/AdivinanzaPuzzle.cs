@@ -13,11 +13,9 @@ public class AdivinanzaPuzzle : MonoBehaviour
     public GameObject[] juego;
     public cameraMove cameraScript;
     public TangibleKey tangKey;
-    public bool ganoPuzzle;
 
     private void Start()
-    {   
-        ganoPuzzle = false;
+    {
         inputText.interactable = true;
         intentosRestantes = maximoIntentos;
         ActualizarMensajeResultado("");
@@ -43,7 +41,7 @@ public class AdivinanzaPuzzle : MonoBehaviour
         {
             ActualizarMensajeResultado("Respuesta correcta!");
             Invoke("DesactivarJuego", 3);
-            ganoPuzzle = true;
+            
             tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
             tangKey.finishRoom();
         }

@@ -14,6 +14,7 @@ TagManager:
   - Transport
   - Light
   - Demon
+  - AdivinanzaPuzzle
   layers:
   - Default
   - TransparentFX

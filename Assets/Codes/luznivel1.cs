@@ -16,12 +16,11 @@ public class luznivel1 : MonoBehaviour
     public GameObject cubo3;
     public GameObject cubo4;
     public GameObject cubo5;
-    private bool jugado;
-    public AdivinanzaPuzzle adivinanzaPuzzle;
+    public GameObject llave;
+    public GameObject arañas;
 
     private void Start()
     {       
-        adivinanzaPuzzle = GameObject.FindObjectOfType<AdivinanzaPuzzle>();
         luz1.enabled = false;
         luz2.enabled = false;
         luz3.enabled = false;
@@ -35,19 +34,20 @@ public class luznivel1 : MonoBehaviour
         cubo3.SetActive(true);
         cubo4.SetActive(true);
         cubo5.SetActive(true);
-        jugado = false;
-
+        arañas.SetActive(false);
         Invoke("LucesPuzzle", 19.0f);
         Invoke("LucesFlashes", 9.0f);
+        Invoke("PuzzleFinalizadoLuces", 24.0f);
     }
 
-    private void Update()
-    {       
-        if (adivinanzaPuzzle.ganoPuzzle) {
-            PuzzleFinalizadoLuces();
-        }
-        
+private void Update()
+{       
+    if (llave == null) {
+        Debug.Log("llave no presente");
+    } else {
+        Debug.Log("llave presente");
     }
+}
     public void PuzzleFinalizadoLuces() {
         luz5.enabled = true;
         luz6.enabled = true;
@@ -66,7 +66,6 @@ public class luznivel1 : MonoBehaviour
         cubo3.SetActive(false);
         cubo4.SetActive(false);
         cubo5.SetActive(false);
-        jugado = true;
     }
 
     private void LucesFlashes()
@@ -79,7 +78,8 @@ public class luznivel1 : MonoBehaviour
     }
 
     private void ApagarFlashes()
-    {
+    {   
+        arañas.SetActive(true);
         luz5.enabled = false;
         luz6.enabled = false;
         luz7.enabled = false;
