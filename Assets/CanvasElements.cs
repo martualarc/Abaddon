@@ -45,7 +45,7 @@ public class CanvasElements : MonoBehaviour
             break;
 
             case "nivel_uno":
-            Invoke("ActivarAdivinanza", 6f);
+            Invoke("ActivarAdivinanza", 19f);
             break;
 
             case "nivel_dos":
