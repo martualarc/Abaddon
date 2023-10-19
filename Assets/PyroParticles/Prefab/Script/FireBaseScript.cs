@@ -23,13 +23,13 @@ namespace DigitalRuby.PyroParticles
         public AudioSource AudioSource;
 
         [Tooltip("How long the script takes to fully start. This is used to fade in animations and sounds, etc.")]
-        public float StartTime = 1.0f;
+        public float StartTime = 34.0f;
 
         [Tooltip("How long the script takes to fully stop. This is used to fade out animations and sounds, etc.")]
-        public float StopTime = 3.0f;
+        public float StopTime = 39.0f;
 
         [Tooltip("How long the effect lasts. Once the duration ends, the script lives for StopTime and then the object is destroyed.")]
-        public float Duration = 2.0f;
+        public float Duration = 5.0f;
 
         [Tooltip("How much force to create at the center (explosion), 0 for none.")]
         public float ForceAmount;
