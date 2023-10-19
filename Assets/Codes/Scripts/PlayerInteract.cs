@@ -9,8 +9,6 @@ public class PlayerInteract : MonoBehaviour
     private Demonio scriptDem;
     BarraDeMiedo playerBarra;
 
-    private GameObject transportObject;
-    private Collider transportCollider;
 
     [SerializeField] private float interactDistance = 8f;
     [SerializeField] private int layer = 7;
@@ -23,8 +21,6 @@ public class PlayerInteract : MonoBehaviour
         demonLayers = (1 << layerD);
         scriptKey = GameObject.FindWithTag("Player").GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
         clickOn = false;
-        transportObject = GameObject.FindWithTag("Transport");
-        transportCollider = transportObject.GetComponent<Collider>();
 
     }
     void Update() {
@@ -71,7 +67,6 @@ public class PlayerInteract : MonoBehaviour
                     tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
                     tangKey.destroy();
                     scriptKey.changeNum(scriptDoor.num);
-                    transportCollider.isTrigger = true;
                     Debug.Log("La puerta se abre");
                 }
                 else {
