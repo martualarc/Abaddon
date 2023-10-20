@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class SpawnNivel7 : MonoBehaviour
 {
+    public static SpawnNivel7 spawn7;
     public GameObject demonio;
 
     void Start()
     {
         demonio.SetActive(false);
-        Invoke("Spawnear", 11f);
+        Invoke("Spawnear", 12f);
     }
 
-    void Spawnear()
+    public void Spawnear()
     {
         GameObject jugador = GameObject.Find("player");
 
