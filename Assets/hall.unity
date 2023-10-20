@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17893541, g: 0.22405343, b: 0.30589858, a: 1}
+  m_IndirectSpecularColor: {r: 0.18362917, g: 0.22787946, b: 0.29805046, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -889,6 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306803659}
   - component: {fileID: 306803660}
+  - component: {fileID: 306803661}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -921,7 +922,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
@@ -972,6 +973,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &306803661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306803658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862dce6be1bcd2e469117a9b50221299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 306803660}
+  scriptKey: {fileID: 0}
 --- !u!1001 &329873016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1905,6 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516488015}
   - component: {fileID: 516488016}
+  - component: {fileID: 516488017}
   m_Layer: 0
   m_Name: Directional Light (3)
   m_TagString: Untagged
@@ -1988,6 +2004,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &516488017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516488014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862dce6be1bcd2e469117a9b50221299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 516488016}
+  scriptKey: {fileID: 0}
 --- !u!1 &524060162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +2676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815403809}
   - component: {fileID: 815403810}
+  - component: {fileID: 815403811}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -2729,6 +2760,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &815403811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815403808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862dce6be1bcd2e469117a9b50221299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 815403810}
+  scriptKey: {fileID: 0}
 --- !u!1001 &831515385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3209,6 +3254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875554652}
   - component: {fileID: 875554653}
+  - component: {fileID: 875554654}
   m_Layer: 0
   m_Name: Directional Light (4)
   m_TagString: Untagged
@@ -3292,6 +3338,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &875554654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875554651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862dce6be1bcd2e469117a9b50221299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 875554653}
+  scriptKey: {fileID: 0}
 --- !u!1001 &878060286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4384,6 +4444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1307251593}
   - component: {fileID: 1307251594}
+  - component: {fileID: 1307251595}
   m_Layer: 0
   m_Name: Directional Light (2)
   m_TagString: Untagged
@@ -4467,6 +4528,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1307251595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307251592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862dce6be1bcd2e469117a9b50221299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 1307251594}
+  scriptKey: {fileID: 0}
 --- !u!1 &1367610940
 GameObject:
   m_ObjectHideFlags: 0

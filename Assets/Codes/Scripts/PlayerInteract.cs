@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerInteract : MonoBehaviour 
+public class PlayerInteract : MonoBehaviour
 {
     public Key scriptKey;
     public Flashlight scriptFlash; //toma el valor que le retorna FalseFlash
@@ -16,15 +16,16 @@ public class PlayerInteract : MonoBehaviour
     private int demonLayers;
     private int interactLayers;
 
-    void Start() {
+    void Start()
+    {
         interactLayers = (1 << layer);
         demonLayers = (1 << layerD);
         scriptKey = GameObject.FindWithTag("Player").GetComponent<Key>(); //apuntar desde keyObj al componente (script) del objeto de clase Key
         clickOn = false;
-
     }
-    void Update() {
-        
+    void Update()
+    {
+
         if (Input.GetMouseButtonDown(0)) // objetos y FFlash (clic izquierdo)
         {
             Debug.Log("Click");
@@ -33,11 +34,11 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetMouseButton(1)) // linterna (mantener click derecho)
         {
             Debug.Log("Click derecho");
-            clickOn = true;         
+            clickOn = true;
             TryFlash();
         }
-        else if(scriptFlash != null && clickOn)
-        {   
+        else if (scriptFlash != null && clickOn)
+        {
             clickOn = false;
             scriptFlash.flashOn = false;
         }
@@ -69,23 +70,27 @@ public class PlayerInteract : MonoBehaviour
                     scriptKey.changeNum(scriptDoor.num);
                     Debug.Log("La puerta se abre");
                 }
-                else {
+                else
+                {
                     Debug.Log("Eso no es posible");
                 }
             }
-            else if (tangKey != null) {
+            else if (tangKey != null)
+            {
                 tangKey.destroy();
                 scriptKey.getKey();
             }
-            else if (scriptNote != null) {
+            else if (scriptNote != null)
+            {
                 Debug.Log("Es una nota.");
                 scriptNote.interact();
             }
-            else if(scriptFalseF != null){
+            else if (scriptFalseF != null)
+            {
                 Debug.Log("Es una linterna.");
                 scriptFlash = scriptFalseF.interact();
             }
-            
+
             //interactuar con puzzle
             //otra componente posible para interactuar
         }
@@ -98,7 +103,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void TryFlash()
     {
-        if(scriptFlash != null)
+        if (scriptFlash != null)
         {
             Debug.Log("Flasheando.");
             scriptFlash.flashOn = true;
