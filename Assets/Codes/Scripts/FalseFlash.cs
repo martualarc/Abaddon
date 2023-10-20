@@ -19,12 +19,17 @@ public class FalseFlash: MonoBehaviour {
 
         //falseRender = gameObject.GetComponent<Renderer>();
         flashRender = flashObj.GetComponent<Renderer>();
+        if(flashRender.enabled == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public Flashlight interact(){
         //falseRender.enabled = false;
         flashUI.GetComponent<CanvasRenderer>().SetAlpha(1f);
         flashRender.enabled = true; //encender visualizacion del modelado de la linterna in-game
+        gameObject.SetActive(false);
         return scriptFlash;
     }
 
