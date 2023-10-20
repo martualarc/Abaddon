@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015427, g: 0.009247125, b: 0.014388997, a: 1}
+  m_IndirectSpecularColor: {r: 0.015421268, g: 0.009244917, b: 0.014378525, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b38041620dd3914da02b121d86dc94a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb55233a22428cd4cb2c0ba788c3af2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3776,7 +3776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSkyBox: {fileID: 2100000, guid: b4f152e0498484391a9f0d5a1facf03b, type: 2}
   afterLifeSkyBox: {fileID: 2100000, guid: 54fe2f000ad8f424fb63cc3ea0ae2bb2, type: 2}
-  inAfterLife: 0
 --- !u!4 &1555946121
 Transform:
   m_ObjectHideFlags: 0
