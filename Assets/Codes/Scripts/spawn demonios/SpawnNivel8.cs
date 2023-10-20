@@ -7,12 +7,12 @@ public class SpawnNivel8 : MonoBehaviour
     void Start()
     {
         demonio.SetActive(false);
-        Invoke("Spawnear", 16f);
+        Invoke("Spawnear", 20f);
     }
 
     void Spawnear()
     {
-        demonio.transform.position = new Vector3(7.326992f, 2.82f, 5.672342f);
+        demonio.transform.position = new Vector3(9.39f, 0.54f, 4.831296f);
         demonio.SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class AudioNivel8 : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Audio.SonidoConDuracion(golpes, 6f, 60f));
-        StartCoroutine(Audio.Sonido(gritoDolor, 4f));
+        StartCoroutine(Audio.SonidoConDuracion(golpes, 20f, 60f));
+        StartCoroutine(Audio.Sonido(gritoDolor, 20f));
     }
 }
