@@ -10,7 +10,7 @@ public class SpawnNivel7 : MonoBehaviour
         demonio.SetActive(false);
         Invoke("Spawnear", 12f);
     }
-
+    
     public void Spawnear()
     {
         GameObject jugador = GameObject.Find("player");
