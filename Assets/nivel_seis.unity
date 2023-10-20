@@ -476,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255a3bb26937dc240a555715a385763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoParaDesaparecer: 25
+  tiempoParaDesaparecer: 24
   tiempoParaReaparecer: 5
 --- !u!1001 &1269825950
 PrefabInstance:
@@ -1990,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255a3bb26937dc240a555715a385763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoParaDesaparecer: 25
+  tiempoParaDesaparecer: 24
   tiempoParaReaparecer: 5
 --- !u!1 &1279699194
 GameObject:
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255a3bb26937dc240a555715a385763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoParaDesaparecer: 25
+  tiempoParaDesaparecer: 24
   tiempoParaReaparecer: 5
 --- !u!1001 &1843559728
 PrefabInstance:
@@ -2816,7 +2816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: 55576431296fddf4d8cdef5014ad547b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3230,6 +3230,7 @@ GameObject:
   - component: {fileID: 2083055625}
   - component: {fileID: 2083055624}
   - component: {fileID: 2083055623}
+  - component: {fileID: 2083055628}
   m_Layer: 7
   m_Name: key_gold
   m_TagString: Key
@@ -3327,6 +3328,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: -21.242, y: -249.075, z: 173.13}
+--- !u!114 &2083055628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083055622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fc8c313d842c940a87e4fdc3b98b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetoParaSpawnear: {fileID: 2083055622}
+  tiempoParaSpawnear: 26
 --- !u!1 &2096678642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1967825679776394, guid: 209728b25a1dee7498573de68103a125, type: 3}
