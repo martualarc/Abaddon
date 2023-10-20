@@ -65,5 +65,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/escalera_nivel_diez.unity
     guid: 7c9a7e363b191d041b9a25cb56d03051
+  - enabled: 1
+    path: Assets/Elegir_final.unity
+    guid: ccccbf43e4325984aaa947de72fc4fa4
+  - enabled: 1
+    path: Assets/Good_Ending.unity
+    guid: 5d3952df60098f7448849e2ad1b43cec
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 23610cab9477aa442b6ff86653f2ed3c, type: 2}
