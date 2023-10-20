@@ -2440,7 +2440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724536578}
   - component: {fileID: 724536579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: luz demonio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4533,7 +4533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380806620}
   - component: {fileID: 1380806618}
-  - component: {fileID: 1380806621}
+  - component: {fileID: 1380806619}
   m_Layer: 6
   m_Name: doubulia
   m_TagString: Demon
@@ -4552,8 +4552,30 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5040879, y: 1.32266, z: 1}
-  m_Center: {x: 3.8192012, y: 3.535168, z: 0.000004570348}
+  m_Size: {x: 1.6130605, y: 1.5949473, z: 1}
+  m_Center: {x: 3.8282528, y: 3.3990242, z: 0.0000051906236}
+--- !u!114 &1380806619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380806617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4653b1f891e389458d4e9e70e99865f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeBar: 0
+  maxlifeBar: 100
+  isNear: 0
+  disappearTime: 10
+  persecutionVelocity: 0.5
+  range: 4
+  dificultad: 3
+  PIntObj: {fileID: 0}
+  scriptPInteract: {fileID: 0}
+  scriptFlash: {fileID: 0}
 --- !u!4 &1380806620
 Transform:
   m_ObjectHideFlags: 0
@@ -4571,27 +4593,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -74.056, z: 0}
---- !u!114 &1380806621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380806617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7b8a82294d8e44996fe6c80312e264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeBar: 0
-  maxlifeBar: 100
-  isNear: 0
-  disappearTime: 10
-  persecutionVelocity: 0.5
-  range: 4
-  PIntObj: {fileID: 0}
-  scriptPInteract: {fileID: 0}
-  scriptFlash: {fileID: 0}
 --- !u!1 &1382586774
 GameObject:
   m_ObjectHideFlags: 0

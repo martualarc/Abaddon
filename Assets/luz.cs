@@ -20,14 +20,12 @@ private void Update()
 
     if (doubuliaObject != null)
     {
-        Debug.Log("Doubulia encontrado");
         luz1.enabled = false;
         luz2.enabled = false;
         luz3.enabled = false;
     }
         if (doubuliaObject == null)
     {
-        Debug.Log("Doubulia no encontrado");
         luz1.enabled = true;
         luz2.enabled = true;
         luz3.enabled = true;

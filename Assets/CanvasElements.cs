@@ -33,12 +33,10 @@ public class CanvasElements : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().name;
         switch(currentScene){
             case "bosque":
-            
             nota.GetComponent<CanvasRenderer>().SetAlpha(0f); 
             break;
 
             case "hall":
-            adivinanza.SetActive(false);
             foreach(GameObject obj in UIBarras) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
             }
