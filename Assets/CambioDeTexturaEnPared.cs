@@ -3,19 +3,18 @@ using UnityEngine;
 
 public class CambioDeTexturaEnPared : MonoBehaviour
 {
-    public Renderer[] paredes; // Lista de Renderers de las paredes
-    public Texture texturaNormal; // Textura normal
-    public Texture texturaAlterna1; // Primera textura alternativa (por ejemplo, negro)
-    public Texture texturaAlterna2; // Segunda textura alternativa (por ejemplo, rojo)
-    public float tiempoParaIniciar = 4.0f; // Tiempo en segundos antes de iniciar la alternancia
-    public float tiempoDeAlternancia = 0.1f; // Tiempo en segundos para alternar entre texturas
-    public float tiempoDeDuracion = 20.0f; // Tiempo en segundos para la duración de la alternancia
+    public Renderer[] paredes; 
+    public Texture texturaNormal; 
+    public Texture texturaAlterna1;
+    public Texture texturaAlterna2; 
+    public float tiempoParaIniciar = 4.0f; 
+    public float tiempoDeAlternancia = 0.1f;
+    public float tiempoDeDuracion = 20.0f;
 
     private bool alternando = false;
 
     private void Start()
     {
-        // Inicia una corrutina para controlar el cambio de texturas
         StartCoroutine(ControlDeTexturasCoroutine());
     }
 
@@ -27,7 +26,6 @@ public class CambioDeTexturaEnPared : MonoBehaviour
 
         while (tiempoTranscurrido < tiempoDeDuracion)
         {
-            // Alterna entre las dos texturas alternas (negro y rojo)
             if (alternando)
             {
                 foreach (var pared in paredes)
