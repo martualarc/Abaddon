@@ -13623,6 +13623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5887548836875358048}
   - component: {fileID: 6556984689260238299}
+  - component: {fileID: 6556984689260238300}
   m_Layer: 0
   m_Name: satanIdle
   m_TagString: Untagged
@@ -13652,6 +13653,19 @@ MonoBehaviour:
   PIntObj: {fileID: 0}
   scriptPInteract: {fileID: 0}
   scriptFlash: {fileID: 0}
+--- !u!65 &6556984689260238300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556984689260238298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2854708, y: 1.4781852, z: 1.7284143}
+  m_Center: {x: 0.035229355, y: 1.5839212, z: 0.36420712}
 --- !u!1 &6559528868454554653
 GameObject:
   m_ObjectHideFlags: 0
