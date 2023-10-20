@@ -89,6 +89,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 Debug.Log("Es una linterna.");
                 scriptFlash = scriptFalseF.interact();
+                Destroy(scriptFlash);
             }
 
             //interactuar con puzzle
