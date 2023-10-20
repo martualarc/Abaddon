@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Elegir_Final_Menu : MonoBehaviour
 {
     public void OnAceptarButton(){
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(15);
     }
 
     public void OnNegarseButton(){
