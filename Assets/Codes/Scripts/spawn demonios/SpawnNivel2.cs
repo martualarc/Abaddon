@@ -29,7 +29,7 @@ public class SpawnNivel2 : MonoBehaviour
             Vector3 posicionJugador = jugador.transform.position;
             Vector3 offset = jugador.transform.forward * 2.0f;
 
-            float altura = -3;
+            float altura = 1f;
 
             Vector3 posicionDemonio = posicionJugador + new Vector3(offset.x, altura, offset.z);
 

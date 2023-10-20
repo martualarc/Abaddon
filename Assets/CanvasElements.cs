@@ -33,12 +33,10 @@ public class CanvasElements : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().name;
         switch(currentScene){
             case "bosque":
-            
             nota.GetComponent<CanvasRenderer>().SetAlpha(0f); 
             break;
 
             case "hall":
-            adivinanza.SetActive(false);
             foreach(GameObject obj in UIBarras) {
             obj.GetComponent<CanvasRenderer>().SetAlpha(0f);
             }
@@ -60,8 +58,26 @@ public class CanvasElements : MonoBehaviour
             }
             break;
 
+            case "nivel_ocho":
+            foreach(GameObject obj in UIBarras) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
+            }
+            break;
+
+            case "nivel_diez":
+            foreach(GameObject obj in UIBarras) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
+            }
+            break;
+
             case "nivel_cuatro":
             Invoke("ActivarSelect", 6f);
+            break;
+
+            case "nivel_siete":
+            foreach(GameObject obj in UIBarras) {
+            obj.GetComponent<CanvasRenderer>().SetAlpha(1f);
+            }
             break;
 
             default:

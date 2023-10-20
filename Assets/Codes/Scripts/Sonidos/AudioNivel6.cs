@@ -9,8 +9,8 @@ public class AudioNivel6 : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Audio.SonidoConDuracion(musicaParque, 0f, 5f));
-        StartCoroutine(Audio.SonidoConDuracion(animatronicos, 2f, 15f));
-        StartCoroutine(Audio.Sonido(musicaParqueGrave, 7f));
+        StartCoroutine(Audio.SonidoConDuracion(musicaParque, 0f, 7f));
+        StartCoroutine(Audio.SonidoConDuracion(animatronicos, 7f, 18f));
+        StartCoroutine(Audio.Sonido(musicaParqueGrave, 25f));
     }
 }

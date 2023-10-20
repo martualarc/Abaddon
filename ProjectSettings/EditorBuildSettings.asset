@@ -29,6 +29,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/nivel_cinco.unity
     guid: 1b75a547c461ecb4791b5bffd421a6fd
+  - enabled: 1
+    path: Assets/nivel_seis.unity
+    guid: 463f312b64faf5b428c7e715a40e7e8d
+  - enabled: 1
+    path: Assets/nivel_siete.unity
+    guid: 93b1f45a6caa93b42809cbda4c4a6eee
+  - enabled: 1
+    path: Assets/nivel_ocho.unity
+    guid: 3e0b2389285d84744b96ab6120598141
+  - enabled: 1
+    path: Assets/nivel_nueve.unity
+    guid: 501413dfe5bea2b40a2aa30bffa904a7
+  - enabled: 1
+    path: Assets/escalera_nivel_diez.unity
+    guid: 7c9a7e363b191d041b9a25cb56d03051
+  - enabled: 1
+    path: Assets/nivel_diez.unity
+    guid: a97970c53e592fe44a3cdccff2774d5c
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -47,5 +65,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/escalera_nivel_diez.unity
     guid: 7c9a7e363b191d041b9a25cb56d03051
+  - enabled: 1
+    path: Assets/Elegir_final.unity
+    guid: ccccbf43e4325984aaa947de72fc4fa4
+  - enabled: 1
+    path: Assets/Good_Ending.unity
+    guid: 5d3952df60098f7448849e2ad1b43cec
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 23610cab9477aa442b6ff86653f2ed3c, type: 2}

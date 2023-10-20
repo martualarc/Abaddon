@@ -15,11 +15,14 @@ public class Demonio: MonoBehaviour {
     private Transform player;
     private bool checkIsNear;
 
+    public float dificultad;
+
     public GameObject PIntObj; //settear en unity
     public PlayerInteract scriptPInteract;
     public Flashlight scriptFlash;
     private GameObject roomDoor;
     private Collider dCollider;
+
 
     private TangibleKey tangKey;
     private BarraDeMiedo bMiedo;
@@ -43,6 +46,7 @@ public class Demonio: MonoBehaviour {
         interactLayers = (1 << layer);
 
         bMiedo.demonAlive = true;
+
     }
 
     void Update()
@@ -93,7 +97,7 @@ public class Demonio: MonoBehaviour {
         if(tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar += (4*tF); //posible error x no definir valor de lifeBar
+            lifeBar += (dificultad*tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()

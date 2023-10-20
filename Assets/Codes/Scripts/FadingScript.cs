@@ -33,6 +33,10 @@ public class FadingScript : MonoBehaviour
             // Espera un fotograma y repite.
             yield return null;
         }
+        
+            if(t>=duration){
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     void Start()

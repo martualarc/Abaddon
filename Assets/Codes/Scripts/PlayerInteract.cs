@@ -110,7 +110,6 @@ public class PlayerInteract : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers))
             {
-                Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
                 scriptDem = hit.collider.GetComponent<Demonio>(); //guarda cualquier objeto con clase heredada de demonio
                 if (scriptDem != null)
                 {
@@ -120,7 +119,6 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white, 5);
                 scriptFlash.isFlashing = false;
                 Debug.Log("Flasheando nada");
             }

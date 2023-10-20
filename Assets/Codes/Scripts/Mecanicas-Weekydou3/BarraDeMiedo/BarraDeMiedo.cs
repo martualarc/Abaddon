@@ -30,12 +30,14 @@ public class BarraDeMiedo : MonoBehaviour
             reaparecer();
             reduceLifeBar();  
         }
+        else fearBar = 0f;
     }
 
     private void reaparecer()
     {
         if (fearBar >= maxFearBar)
         {
+            fearBar = 0f;
             ExitLevel();
         }
     }
