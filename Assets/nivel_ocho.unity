@@ -964,6 +964,7 @@ GameObject:
   - component: {fileID: 415121933}
   - component: {fileID: 415121932}
   - component: {fileID: 415121931}
+  - component: {fileID: 415121936}
   m_Layer: 7
   m_Name: key_gold
   m_TagString: Key
@@ -1045,7 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d589a0bae60c264db1cad53f0497fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderEnable: 0
+  renderEnable: 1
 --- !u!4 &415121935
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,6 +1061,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -21.242, y: -249.075, z: 173.13}
+--- !u!114 &415121936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415121930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fc8c313d842c940a87e4fdc3b98b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetoParaSpawnear: {fileID: 415121930}
+  tiempoParaSpawnear: 20
 --- !u!1001 &420559917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2661,6 +2676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demonio: {fileID: 4493914614846888914}
+  barraDemon: {fileID: 0}
 --- !u!4 &2080143844
 Transform:
   m_ObjectHideFlags: 0
