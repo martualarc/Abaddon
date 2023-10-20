@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18362917, g: 0.22787946, b: 0.29805046, a: 1}
+  m_IndirectSpecularColor: {r: 0.18362886, g: 0.22787905, b: 0.29805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1814,7 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692ccc07d8b9ad84fb0e5ec72475cfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastExit: hallexit7
+  lastExit: hallExit7
 --- !u!4 &492512093
 Transform:
   m_ObjectHideFlags: 0
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 667328996}
   - component: {fileID: 667328995}
   m_Layer: 0
-  m_Name: hallExit7 (1)
+  m_Name: hallExit9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692ccc07d8b9ad84fb0e5ec72475cfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastExit: hallexit9
+  lastExit: hallExit9
 --- !u!4 &667328996
 Transform:
   m_ObjectHideFlags: 0
