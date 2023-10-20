@@ -23,6 +23,7 @@ public class Demonio: MonoBehaviour {
     private GameObject roomDoor;
     private Collider dCollider;
 
+
     private TangibleKey tangKey;
     private BarraDeMiedo bMiedo;
 
@@ -45,6 +46,7 @@ public class Demonio: MonoBehaviour {
         interactLayers = (1 << layer);
 
         bMiedo.demonAlive = true;
+
     }
 
     void Update()
