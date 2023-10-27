@@ -15,6 +15,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private int layerD = 6;
     private int demonLayers;
     private int interactLayers;
+    private string interactMessage = "";
+    private string rightMessage = "";
+    private GUIStyle redTextStyle;
 
     void Start()
     {
@@ -25,6 +28,8 @@ public class PlayerInteract : MonoBehaviour
     }
     void Update()
     {
+        DetectInteractView();
+
 
         if (Input.GetMouseButtonDown(0)) // objetos y FFlash (clic izquierdo)
         {
@@ -48,6 +53,47 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    private void DetectInteractView()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactLayers))
+        {
+            Door scriptDoor = hit.collider.GetComponent<Door>();
+            Note scriptNote = hit.collider.GetComponent<Note>();
+            FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
+            TangibleKey tangKey = hit.collider.GetComponent<TangibleKey>();
+            if (scriptDoor != null || tangKey != null || scriptNote != null || scriptFalseF != null)
+            {
+                interactMessage = "USAR";
+            }
+            else
+            {
+                interactMessage = "";
+            }
+        }
+        else
+        {
+            interactMessage = "";
+        }
+    }
+    void OnGUI()
+    {
+        // Mostrar el mensaje de la izquierda
+        float messageHeight = 40f;
+        float messageWidth = GUI.skin.label.CalcSize(new GUIContent(interactMessage)).x;
+        float xPos = (Screen.width - messageWidth) / 2f;
+        float yPos = Screen.height - messageHeight - 10;
+        GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage);
+
+        // Mostrar el mensaje de la derecha
+        float rightMessageWidth = GUI.skin.label.CalcSize(new GUIContent(rightMessage)).x;
+        float rightXPos = Screen.width - rightMessageWidth - 10;
+        GUI.Label(new Rect(rightXPos, yPos, rightMessageWidth, messageHeight), rightMessage);
+    }
+    private void ClearRightMessage()
+    {
+        rightMessage = "";
+    }
     private void TryInteract()
     {
         RaycastHit hit;
@@ -73,6 +119,8 @@ public class PlayerInteract : MonoBehaviour
                 else
                 {
                     Debug.Log("Eso no es posible");
+                    rightMessage = "La puerta está trabada o necesitas una llave";
+                    Invoke("ClearRightMessage", 3f);
                 }
             }
             else if (tangKey != null)
