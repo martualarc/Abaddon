@@ -41,14 +41,8 @@ public class AmbientLightColorController : MonoBehaviour
     public void ChangeLight()
     {
         indiceColor = scriptKey.num;
-
-        Debug.Log(scriptKey.num);
-        Debug.Log(color);
         color = lightColors[scriptKey.num - 1];
-
         directionalLight.color = color;
 
-        Debug.Log(color);
-        Debug.Log(directionalLight.color);
     }
 }

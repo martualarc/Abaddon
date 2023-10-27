@@ -62,9 +62,12 @@ public class PlayerInteract : MonoBehaviour
             Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
             TangibleKey tangKey = hit.collider.GetComponent<TangibleKey>();
-            if (scriptDoor != null || tangKey != null || scriptNote != null || scriptFalseF != null)
+            if (tangKey != null || scriptNote != null || scriptFalseF != null)
             {
-                interactMessage = "USAR";
+                interactMessage = "TOMAR";
+            }
+            else if(scriptDoor != null){
+                interactMessage = "ABRIR";
             }
             else
             {
@@ -83,7 +86,10 @@ public class PlayerInteract : MonoBehaviour
         float messageWidth = GUI.skin.label.CalcSize(new GUIContent(interactMessage)).x;
         float xPos = (Screen.width - messageWidth) / 2f;
         float yPos = Screen.height - messageHeight - 10;
-        GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage);
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 35;
+        style.normal.textColor = Color.white;
+        GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage, style);
 
         // Mostrar el mensaje de la derecha
         float rightMessageWidth = GUI.skin.label.CalcSize(new GUIContent(rightMessage)).x;
