@@ -70,26 +70,26 @@ public class PlayerInteract : MonoBehaviour
             if (scriptDoor != null)
             {
                 interactMessage = "ABRIR";
-                if(tryInteractStatus)
+                if (tryInteractStatus)
                 {
                     if (scriptDoor.interact(scriptKey.isKey, scriptKey.num))
                     {
-                    tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
-                    tangKey.destroy();
-                    scriptKey.changeNum(scriptDoor.num);
-                    Debug.Log("La puerta se abre");
+                        tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
+                        tangKey.destroy();
+                        scriptKey.changeNum(scriptDoor.num);
+                        Debug.Log("La puerta se abre");
                     }
                     else
                     {
-                    rightMessage = "La puerta está trabada o necesitas una llave";
-                    Invoke("ClearRightMessage", 3f);
+                        rightMessage = "La puerta está trabada o necesitas una llave";
+                        Invoke("ClearRightMessage", 3f);
                     }
                 }
             }
             else if (tangKey != null)
             {
                 interactMessage = "RECOGER";
-                if(tryInteractStatus)
+                if (tryInteractStatus)
                 {
                     tangKey.destroy();
                     scriptKey.getKey();
@@ -98,7 +98,7 @@ public class PlayerInteract : MonoBehaviour
             else if (scriptNote != null)
             {
                 interactMessage = "LEER";
-                if(tryInteractStatus)
+                if (tryInteractStatus)
                 {
                     scriptNote.interact();
                 }
@@ -106,7 +106,7 @@ public class PlayerInteract : MonoBehaviour
             else if (scriptFalseF != null)
             {
                 interactMessage = "RECOGER";
-                if(tryInteractStatus)
+                if (tryInteractStatus)
                 {
                     scriptFlash = scriptFalseF.interact();
                     rightMessage = "Click derecho para iluminar";
@@ -125,7 +125,7 @@ public class PlayerInteract : MonoBehaviour
             interactMessage = "";
         }
     }
-    
+
 
     private void TryFlash()
     {
@@ -155,7 +155,7 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("Primero debes tener linterna.");
         }
     }
-    
+
     void OnGUI()
     {
         // Mostrar el mensaje de la izquierda
@@ -172,6 +172,12 @@ public class PlayerInteract : MonoBehaviour
         float rightMessageWidth = GUI.skin.label.CalcSize(new GUIContent(rightMessage)).x;
         float rightXPos = Screen.width - rightMessageWidth - 10;
         GUI.Label(new Rect(rightXPos, yPos, rightMessageWidth, messageHeight), rightMessage);
+
+        // Dibujar un punto blanco en el centro de la pantalla
+        Texture2D whiteTexture = new Texture2D(1, 1);
+        whiteTexture.SetPixel(0, 0, Color.white);
+        whiteTexture.Apply();
+        GUI.DrawTexture(new Rect(Screen.width / 2 - 1, Screen.height / 2 - 1, 2, 2), whiteTexture); // El punto será de 2x2 píxeles
     }
     private void ClearRightMessage()
     {
