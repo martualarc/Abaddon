@@ -10,7 +10,7 @@ public class PlayerInteract : MonoBehaviour
     BarraDeMiedo playerBarra;
 
 
-    [SerializeField] private float interactDistance = 8f;
+    [SerializeField] private float interactDistance = 7f;
     [SerializeField] private int layer = 7;
     [SerializeField] private int layerD = 6;
     private int demonLayers;
@@ -62,9 +62,21 @@ public class PlayerInteract : MonoBehaviour
             Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
             TangibleKey tangKey = hit.collider.GetComponent<TangibleKey>();
-            if (scriptDoor != null || tangKey != null || scriptNote != null || scriptFalseF != null)
+            if (scriptDoor != null)
             {
-                interactMessage = "USAR";
+                interactMessage = "ABRIR";
+            }
+            else if (tangKey != null)
+            {
+                interactMessage = "RECOGER";
+            }
+            else if (scriptNote != null)
+            {
+                interactMessage = "LEER";
+            }
+            else if (scriptFalseF != null)
+            {
+                interactMessage = "RECOGER";
             }
             else
             {
@@ -137,6 +149,8 @@ public class PlayerInteract : MonoBehaviour
             {
                 Debug.Log("Es una linterna.");
                 scriptFlash = scriptFalseF.interact();
+                rightMessage = "Click derecho para iluminar";
+                Invoke("ClearRightMessage", 3f);
             }
 
             //interactuar con puzzle
