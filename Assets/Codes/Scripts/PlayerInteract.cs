@@ -95,7 +95,10 @@ public class PlayerInteract : MonoBehaviour
         float messageWidth = GUI.skin.label.CalcSize(new GUIContent(interactMessage)).x;
         float xPos = (Screen.width - messageWidth) / 2f;
         float yPos = Screen.height - messageHeight - 10;
-        GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage);
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 35;
+        style.normal.textColor = Color.white;
+        GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage, style);
 
         // Mostrar el mensaje de la derecha
         float rightMessageWidth = GUI.skin.label.CalcSize(new GUIContent(rightMessage)).x;

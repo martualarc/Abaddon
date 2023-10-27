@@ -23,6 +23,7 @@ public class TangibleKey: MonoBehaviour
         GetComponent<Collider>().enabled = false;
     }
     public void finishRoom(){
+        transform.position -= new Vector3(0, 5, 0);
         keyRender.enabled = true;
         keyLight.enabled = true;
     }
