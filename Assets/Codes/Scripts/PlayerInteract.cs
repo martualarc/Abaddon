@@ -49,6 +49,7 @@ public class PlayerInteract : MonoBehaviour
         {
             clickOn = false;
             scriptFlash.flashOn = false;
+            killingDemonSound.Pause();
         }
         if ((Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl)) && Input.GetKeyDown(KeyCode.Z))
         {
