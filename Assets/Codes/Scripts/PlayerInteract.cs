@@ -18,6 +18,7 @@ public class PlayerInteract : MonoBehaviour
     private string interactMessage = "";
     private string rightMessage = "";
     private GUIStyle redTextStyle;
+    public AudioSource killingDemonSound;
 
     void Start()
     {
@@ -62,10 +63,12 @@ public class PlayerInteract : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
             Debug.Log("Did Hit");
+
             Door scriptDoor = hit.collider.GetComponent<Door>();
             Note scriptNote = hit.collider.GetComponent<Note>();
             FalseFlash scriptFalseF = hit.collider.GetComponent<FalseFlash>();
             TangibleKey tangKey = hit.collider.GetComponent<TangibleKey>();
+            scriptDem = hit.collider.GetComponent<Demonio>();
 
             if (scriptDoor != null)
             {
@@ -81,8 +84,9 @@ public class PlayerInteract : MonoBehaviour
                     }
                     else
                     {
+                        ClearRightMessage();
                         rightMessage = "La puerta está trabada o necesitas una llave";
-                        Invoke("ClearRightMessage", 3f);
+                        Invoke("ClearRightMessage", 2f);
                     }
                 }
             }
@@ -109,9 +113,14 @@ public class PlayerInteract : MonoBehaviour
                 if (tryInteractStatus)
                 {
                     scriptFlash = scriptFalseF.interact();
-                    rightMessage = "Click derecho para iluminar";
-                    Invoke("ClearRightMessage", 3f);
+                    rightMessage = "Destruye a los demonios con el poder de la luz";
+                    Invoke("ClearRightMessage", 4f);
                 }
+            }
+            else if (scriptDem != null)
+            {
+                interactMessage = "DEMONNN";
+                //NO FUNCIONA
             }
             else
             {
@@ -147,8 +156,8 @@ public class PlayerInteract : MonoBehaviour
             {
                 scriptFlash.isFlashing = false;
                 Debug.Log("Flasheando nada");
+                killingDemonSound.Play();
             }
-
         }
         else
         {
