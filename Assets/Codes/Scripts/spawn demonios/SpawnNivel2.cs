@@ -6,6 +6,7 @@ public class SpawnNivel2 : MonoBehaviour
     private BarraDeMiedo bMiedo;
     private Flashlight scriptFlash;
     public ScriptBarraDemon barraDemon;
+    private RainEffect rainEffect;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class SpawnNivel2 : MonoBehaviour
 
         demonio.SetActive(false);
         Invoke("Spawnear", 7f);
+
+        rainEffect = GameObject.FindObjectOfType<RainEffect>();
     }
 
     void Spawnear()
@@ -40,5 +43,7 @@ public class SpawnNivel2 : MonoBehaviour
         bMiedo.demonAlive = true;
         scriptFlash.demonAlive = true;
         barraDemon.enabled = true;
+
+        rainEffect.StartRain();
     }
 }
