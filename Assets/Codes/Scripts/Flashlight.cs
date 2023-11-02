@@ -13,7 +13,6 @@ public class Flashlight: MonoBehaviour {
     private Light spot;
     public bool demonAlive;
     
-    
     void Start () {
         isFlashing = false;
         timeFlashing = 0;

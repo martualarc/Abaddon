@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class Demonio: MonoBehaviour {
+public class Demonio : MonoBehaviour
+{
     [SerializeField] public float lifeBar = 0f;
     public float maxlifeBar = 100f;
     public bool isNear;
@@ -23,19 +24,21 @@ public class Demonio: MonoBehaviour {
     private GameObject roomDoor;
     private Collider dCollider;
 
+
     private TangibleKey tangKey;
     private BarraDeMiedo bMiedo;
+    private RainEffect rainEffect;
 
 
     void Start()
-    {   
+    {
         PIntObj = GameObject.FindWithTag("MainCamera");
         roomDoor = GameObject.FindWithTag("Door");
         player = PIntObj.GetComponent<Transform>();
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
-    
+
         bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
         tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
 
@@ -45,33 +48,36 @@ public class Demonio: MonoBehaviour {
         interactLayers = (1 << layer);
 
         bMiedo.demonAlive = true;
+
+        rainEffect = GameObject.FindObjectOfType<RainEffect>();
+
     }
 
     void Update()
     {
-        if(checkIsAlive())
+        if (checkIsAlive())
         {
             //checkIsNear(); por ahora no
             reduceLifeBar();
             followPlayer();
             //showLifeBar();
         }
-        else if(disappearTime <= 0)
+        else if (disappearTime <= 0)
         {
             killDemon();
         }
     }
-    
+
     bool checkIsAlive()
     {
-       if(lifeBar >= 100)
-       {    
+        if (lifeBar >= 100)
+        {
             disappear();
             bMiedo.demonAlive = false;
             scriptFlash.demonAlive = false;
             return false;
-       }
-       return true;
+        }
+        return true;
     }
     void disappear()
     {
@@ -81,21 +87,21 @@ public class Demonio: MonoBehaviour {
     void followPlayer()
     {
         checkIsNear = Physics.CheckSphere(transform.position, range, interactLayers);
-        Vector3 playerPos = new Vector3(player.position.x,transform.position.y,player.position.z);
+        Vector3 playerPos = new Vector3(player.position.x, transform.position.y, player.position.z);
         transform.LookAt(playerPos);
 
-        if(checkIsNear == false)
+        if (checkIsNear == false)
         {
-        transform.position = Vector3.MoveTowards(transform.position,playerPos,persecutionVelocity * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerPos, persecutionVelocity * Time.deltaTime);
         }
     }
     void reduceLifeBar()
     {
         float tF = scriptFlash.timeFlashing;
-        if(tF > 0)
+        if (tF > 0)
         {
             scriptFlash.timeFlashing = 0.0f;
-            lifeBar += (dificultad*tF); //posible error x no definir valor de lifeBar
+            lifeBar += (dificultad * tF); //posible error x no definir valor de lifeBar
         }
     }
     void killDemon()
@@ -106,5 +112,7 @@ public class Demonio: MonoBehaviour {
         dCollider.isTrigger = true;
         gameObject.SetActive(false);
         //destruir objeto
+
+        rainEffect.PauseRain();
     }
 }
