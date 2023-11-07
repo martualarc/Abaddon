@@ -174,14 +174,18 @@ public class PlayerInteract : MonoBehaviour
         float xPos = (Screen.width - messageWidth) / 2f;
         float yPos = Screen.height - messageHeight - 10;
         GUIStyle style = new GUIStyle();
-        style.fontSize = 15;
+        style.fontSize = 25;
         style.normal.textColor = Color.white;
         GUI.Label(new Rect(xPos, yPos, messageWidth, messageHeight), interactMessage, style);
 
         // Mostrar el mensaje de la derecha
+        float messageHeight2 = 70f;
         float rightMessageWidth = GUI.skin.label.CalcSize(new GUIContent(rightMessage)).x;
-        float rightXPos = Screen.width - rightMessageWidth - 10;
-        GUI.Label(new Rect(rightXPos, yPos, rightMessageWidth, messageHeight), rightMessage);
+        float rightXPos = Screen.width - rightMessageWidth - 30f;
+        GUIStyle style2 = new GUIStyle();
+        style2.fontSize = 20;
+        style2.normal.textColor = Color.white;
+        GUI.Label(new Rect(rightXPos, yPos, rightMessageWidth, messageHeight2), rightMessage, style2);
 
         // Dibujar un punto blanco en el centro de la pantalla
         Texture2D whiteTexture = new Texture2D(1, 1);

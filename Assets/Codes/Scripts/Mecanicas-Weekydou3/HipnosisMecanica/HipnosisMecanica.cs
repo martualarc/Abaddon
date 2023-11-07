@@ -3,7 +3,7 @@ using UnityEngine.Video;
 
 public class HipnosisMecanica : MonoBehaviour
 {
-    public float tiempoRequerido = 15f; // Tiempo requerido en segundos para completar la hipnosis
+    public float tiempoRequerido = 12f; // Tiempo requerido en segundos para completar la hipnosis
     private float tiempoActual; // Tiempo transcurrido
 
     public Camera viewCamera;
