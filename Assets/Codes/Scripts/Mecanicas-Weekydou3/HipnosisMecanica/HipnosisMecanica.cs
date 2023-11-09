@@ -8,6 +8,8 @@ public class HipnosisMecanica : MonoBehaviour
 
     public Camera viewCamera;
     private TangibleKey tangKey;
+    private bool did = false;
+
     private void Start()
     {
         tiempoActual = 0f;
@@ -21,9 +23,10 @@ public class HipnosisMecanica : MonoBehaviour
         {
             tiempoActual += Time.deltaTime;
 
-            if (tiempoActual >= tiempoRequerido)
+            if (tiempoActual >= tiempoRequerido && !did)
             {
                 CompletarHipnosis();
+                did = true;
             }
         }
         else
