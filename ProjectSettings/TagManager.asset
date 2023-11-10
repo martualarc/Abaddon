@@ -15,6 +15,10 @@ TagManager:
   - Light
   - Demon
   - AdivinanzaPuzzle
+  - momento
+  - select
+  - playback
+  - scorpioTele
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
     private bool seleccionCorrecta = false; // Indica si la selección fue correcta
     public GameObject[] juego;
     private TangibleKey tangKey;
-
+    private Momento momentoScript;
     private void Start()
     {
         botonCaraReal.onClick.AddListener(SeleccionCaraReal);
@@ -73,6 +73,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
             botonMascara.interactable = false;
             tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
             tangKey.finishRoom();
+            momentoScript = GameObject.FindGameObjectWithTag("momento").GetComponent<Momento>();
             Invoke("DesactivarJuego", 3);
         }
     }
@@ -87,6 +88,7 @@ public class MecanicaSeleccionImagen : MonoBehaviour
     }
 
     public void DesactivarJuego(){
+        momentoScript.elMomento();
         foreach(GameObject obj in juego) {
             obj.SetActive(false);
             }
