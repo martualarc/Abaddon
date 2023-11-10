@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class spawnLlave : MonoBehaviour
 {
-    public GameObject objetoParaSpawnear;
     public float tiempoParaSpawnear = 26.0f;
+    private TangibleKey tangKey;
 
     private void Start()
     {
-        objetoParaSpawnear.SetActive(false);
+        tangKey = GameObject.FindWithTag("Key").GetComponent<TangibleKey>();
         Invoke("SpawnearObjeto", tiempoParaSpawnear);
     }
 
     private void SpawnearObjeto()
     {
-        objetoParaSpawnear.SetActive(true);
+        tangKey.finishRoom();
     }
 }
