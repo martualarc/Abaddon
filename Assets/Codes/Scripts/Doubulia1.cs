@@ -13,6 +13,8 @@ public class Doubulia1 : MonoBehaviour
     public NavMeshAgent agent;
 
     public ParticleSystem fuego;
+    public ParticleSystem explosionp;
+    public Transform explosion;
     public AudioSource audioSource;
     public AudioClip pasos;
     public AudioClip grito;
@@ -223,8 +225,11 @@ public class Doubulia1 : MonoBehaviour
         if (lifeBar >= 100)
         {
             key.parent = null;
+            
             jugadorEnVista = false;
             disappear();
+            explosionp.Play();
+            explosion.parent = null;
             bMiedo.demonAlive = false;
             scriptFlash.demonAlive = false;
             return false;

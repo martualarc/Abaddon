@@ -25,10 +25,8 @@ public class sonidos : MonoBehaviour
 
         if (demonioScript != null)
         {
-            // Accede a la variable jugadorEnVista
             bool jugadorEnVista = demonioScript.jugadorEnVista;
 
-            // Ahora puedes usar la variable jugadorEnVista en tu void
             VerificarDemonioEnVista(jugadorEnVista);
         }
     }

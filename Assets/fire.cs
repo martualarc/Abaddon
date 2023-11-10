@@ -3,6 +3,7 @@ using UnityEngine;
 public class fire : MonoBehaviour
 {
     public ParticleSystem linterna; // El componente de luz de la linterna
+    public ParticleSystem fuego;
     public float bateriaMaxima = 100.0f; // Capacidad máxima de la carga
     public float consumoPorSegundo = 5.0f; // Consumo de carga por segundo
     public float recargaPorPila = 50.0f; // Cantidad de carga que se recarga al recoger una pila
@@ -11,7 +12,7 @@ public class fire : MonoBehaviour
 
     private float bateriaActual;
 
-    public ParticleSystem sistemaDeParticulas;
+    
     [SerializeField] public Transform parentObject;
     [SerializeField] public Transform targetObject;
     public bool quemando = false;
@@ -27,15 +28,16 @@ public class fire : MonoBehaviour
         if (Input.GetKey(activarLinternaKey) && bateriaActual > 0)
         {
             bateriaActual -= consumoPorSegundo * Time.deltaTime;
-            sistemaDeParticulas.Play();
+            
+            fuego.Play();
             linterna.Play();
             quemando = true;
         }
         else
         {
-            sistemaDeParticulas.Stop();
-            linterna.Stop();
             quemando = false;
+            fuego.Stop();
+            linterna.Stop();
         }
 
         // Recoger una pila y recargar la carga
