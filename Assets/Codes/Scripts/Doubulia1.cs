@@ -16,6 +16,8 @@ public class Doubulia1 : MonoBehaviour
     public ParticleSystem explosionp;
     public Transform explosion;
     public AudioSource audioSource;
+    public AudioSource explosions;
+
     public AudioClip pasos;
     public AudioClip grito;
     // Update is called once per frame
@@ -229,6 +231,7 @@ public class Doubulia1 : MonoBehaviour
             jugadorEnVista = false;
             disappear();
             explosionp.Play();
+            explosions.Play();
             explosion.parent = null;
             bMiedo.demonAlive = false;
             scriptFlash.demonAlive = false;
@@ -258,6 +261,7 @@ public class Doubulia1 : MonoBehaviour
             {
                 fuego.Play();
             }
+            Velocidad = Mathf.Lerp(Velocidad, 3, Time.deltaTime * 10);
             emision = 0f;
         }
         else{
@@ -267,6 +271,10 @@ public class Doubulia1 : MonoBehaviour
             emision += Time.deltaTime;
             if(emision >= 3.5f){
                 fuego.Stop();
+            }
+            else{
+                Velocidad = Mathf.Lerp(Velocidad, 3, Time.deltaTime * 10);
+                MiAnimator.SetBool("light",true);
             }
 
         }

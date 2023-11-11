@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class door2 : MonoBehaviour
+public class door3 : MonoBehaviour
 {
     public AudioSource abrir;
     public AudioSource cerrar;
@@ -48,7 +48,7 @@ public class door2 : MonoBehaviour
         else{
             interactMessage = "";
         }
-        if(jugador.eulerAngles.y < 180f){
+        if(jugador.eulerAngles.y > 270f || jugador.eulerAngles.y < 90f){
             dir = -1f;
         }else{
             dir = 1f;

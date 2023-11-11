@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class fire : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class fire : MonoBehaviour
     public float consumoPorSegundo = 5.0f; // Consumo de carga por segundo
     public float recargaPorPila = 50.0f; // Cantidad de carga que se recarga al recoger una pila
     public KeyCode activarLinternaKey = KeyCode.Mouse1; // Tecla para activar  (clic derecho)
-    public GameObject pila; // Objeto de pila a recoger
-
+ 
+    public List<Transform> pila; // Objetos de pila a recoger
+    public float distanciaUmbral = 4f;
     private float bateriaActual;
+    public bool tieneFuego = false;
 
     
     [SerializeField] public Transform parentObject;
@@ -19,13 +22,13 @@ public class fire : MonoBehaviour
 
     void Start()
     {
-        bateriaActual = bateriaMaxima;
+        bateriaActual = 20f;
     }
 
     void Update()
     {
         // Encender o apagar la linterna al hacer clic derecho
-        if (Input.GetKey(activarLinternaKey) && bateriaActual > 0)
+        if (Input.GetKey(activarLinternaKey) && bateriaActual > 0 && tieneFuego)
         {
             bateriaActual -= consumoPorSegundo * Time.deltaTime;
             
@@ -41,38 +44,41 @@ public class fire : MonoBehaviour
         }
 
         // Recoger una pila y recargar la carga
-        if (Input.GetKeyDown(KeyCode.E) && Vector3.Distance(pila.transform.position, transform.position) < 2.0f)
+        foreach (Transform objetoTransform in pila)
         {
-            RecargarBateria();
+            float distancia = Vector3.Distance(transform.position, objetoTransform.position);
+
+            if (distancia < distanciaUmbral && Input.GetKeyDown(KeyCode.E))
+            {
+                RecargarBateria();
+                objetoTransform.position = new Vector3(Random.Range(-18f, 20f), 1.5f, Random.Range(-8f, 60f));
+            }
         }
 
+        if(tieneFuego){
+            transform.parent = parentObject;
+            transform.position = targetObject.position;
+            transform.rotation = targetObject.rotation;    
+        }
         // Asegurarse de que la carga no se agote más allá del mínimo
         bateriaActual = Mathf.Max(bateriaActual, 0);
 
-        // Actualizar el estado de la carga
-        ActualizarEstadoBateria();
     }
 
     void RecargarBateria()
     {
         bateriaActual += recargaPorPila;
         bateriaActual = Mathf.Min(bateriaActual, bateriaMaxima);
-        Destroy(pila); // Elimina el objeto de la pila
     }
 
-    void ActualizarEstadoBateria()
+    
+    private void OnTriggerStay(Collider other)
     {
-        // Aquí puedes agregar lógica para mostrar el estado de la carga en el juego, como una barra de energía en la interfaz de usuario.
-        // Puedes utilizar bateriaActual / bateriaMaxima para calcular el porcentaje de carga restante.
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
-            // Convierte este objeto en hijo del objeto padre
-            transform.parent = parentObject;
-            transform.position = targetObject.position;
-            transform.rotation = targetObject.rotation;
+            tieneFuego = true;
+            Collider miCollider = GetComponent<Collider>();
+            miCollider.enabled = false;
         }
     }
 
