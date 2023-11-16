@@ -15,7 +15,7 @@ public class fire : MonoBehaviour
     private float bateriaActual;
     public bool tieneFuego = false;
 
-    
+    private BarraDeMiedo bMiedo;
     [SerializeField] public Transform parentObject;
     [SerializeField] public Transform targetObject;
     public bool quemando = false;
@@ -27,6 +27,9 @@ public class fire : MonoBehaviour
 
     void Update()
     {
+        bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
+        parentObject = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        targetObject = GameObject.FindGameObjectWithTag("Linterna").GetComponent<Transform>();
         // Encender o apagar la linterna al hacer clic derecho
         if (Input.GetKey(activarLinternaKey) && bateriaActual > 0 && tieneFuego)
         {
@@ -63,6 +66,9 @@ public class fire : MonoBehaviour
         // Asegurarse de que la carga no se agote más allá del mínimo
         bateriaActual = Mathf.Max(bateriaActual, 0);
 
+        if(bMiedo.demonAlive == false){
+            gameObject.SetActive(false);
+        }
     }
 
     void RecargarBateria()

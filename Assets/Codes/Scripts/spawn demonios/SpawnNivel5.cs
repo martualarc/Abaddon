@@ -16,10 +16,10 @@ public class SpawnNivel5 : MonoBehaviour
 
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
         // Desactivar el demonio al inicio
-        demonio.SetActive(false);
+        //demonio.SetActive(false);
 
         // Invocar la función Spawnear después de 12 segundos
-        Invoke("Spawnear", 12f);
+        Invoke("Spawnear", 0f);
     }
 
     void Spawnear()
@@ -28,14 +28,14 @@ public class SpawnNivel5 : MonoBehaviour
 
         if (jugador != null)
         {
-            Vector3 posicionDemonio = new Vector3(9.39999962f, 0.497499943f, 0.959999979f);
+            //Vector3 posicionDemonio = new Vector3(9.39999962f, 0.497499943f, 0.959999979f);
 
             // Establecer la posición del demonio
-            demonio.transform.position = posicionDemonio;
+            //demonio.transform.position = posicionDemonio;
         }
 
         // Activar el demonio
-        demonio.SetActive(true);
+        //demonio.SetActive(true);
         bMiedo.demonAlive = true;
         scriptFlash.demonAlive = true;
         barraDemon.enabled = true;

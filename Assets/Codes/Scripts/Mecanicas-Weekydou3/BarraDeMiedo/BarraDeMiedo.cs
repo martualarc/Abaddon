@@ -15,6 +15,7 @@ public class BarraDeMiedo : MonoBehaviour
 
     public bool demonAlive = false;
 
+    public Doubulia1 doubuliaObject;
     void Start()
     {
         pInteract = GameObject.FindWithTag("MainCamera").GetComponent<PlayerInteract>();
@@ -25,6 +26,7 @@ public class BarraDeMiedo : MonoBehaviour
     {
         sceneToLoad = getStrings.sceneToLoad;
         exitName = getStrings.exitName;
+        doubuliaObject = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
         if(demonAlive)
         {
             reaparecer();
@@ -44,11 +46,22 @@ public class BarraDeMiedo : MonoBehaviour
 
     private void reduceLifeBar()
     {
-        float tF = scriptFlash.timeNotFlashing;
-        if (tF > 0)
-        {
-            scriptFlash.timeNotFlashing = 0.0f;
-            fearBar += (3*tF);
+        if(doubuliaObject != null){
+            float tF = scriptFlash.timeNotFlashing;
+            if(doubuliaObject.jugadorEnVista && tF > 0){
+                fearBar = Mathf.Min(fearBar + 5f * Time.deltaTime, 100f);
+            }
+            else{
+                fearBar = Mathf.Max(fearBar - 1f * Time.deltaTime, 0.01f);
+            }
+        }
+        else{
+            float tF = scriptFlash.timeNotFlashing;
+            if (tF > 0)
+            {
+                scriptFlash.timeNotFlashing = 0.0f;
+                fearBar += (3*tF);
+            }
         }
     }
 

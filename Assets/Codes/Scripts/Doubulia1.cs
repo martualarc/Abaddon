@@ -22,7 +22,7 @@ public class Doubulia1 : MonoBehaviour
     public AudioClip grito;
     // Update is called once per frame
 
-    public float lifeBar = 0f;
+    [SerializeField] public float lifeBar = 0f;
     public float maxlifeBar = 100f;
     public bool isNear;
     //[SerializeField] public int nearDistance;
@@ -229,9 +229,10 @@ public class Doubulia1 : MonoBehaviour
             key.parent = null;
             
             jugadorEnVista = false;
+            explosions.Play();
             disappear();
             explosionp.Play();
-            explosions.Play();
+            
             explosion.parent = null;
             bMiedo.demonAlive = false;
             scriptFlash.demonAlive = false;
