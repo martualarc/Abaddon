@@ -11364,10 +11364,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiAnimator: {fileID: 837444209}
-  Objetivo: {fileID: 1194349239}
+  Objetivo: {fileID: 1289876762}
   key: {fileID: 1386581977}
   Velocidad: 8
   agent: {fileID: 534623694}
+  dist: 0
   fuego: {fileID: 198000014112473666}
   explosionp: {fileID: 1301460191}
   explosion: {fileID: 1301460189}
@@ -22871,6 +22872,8 @@ MonoBehaviour:
   sceneToLoad: 
   exitName: 
   demonAlive: 0
+  "da\xF1o": 0
+  tgolpe: 0
   doubuliaObject: {fileID: 0}
 --- !u!114 &1194349236
 MonoBehaviour:
@@ -25367,6 +25370,8 @@ MonoBehaviour:
   sceneToLoad: 
   exitName: 
   demonAlive: 0
+  "da\xF1o": 0
+  tgolpe: 0
   doubuliaObject: {fileID: 0}
 --- !u!4 &1289876762
 Transform:
@@ -25427,7 +25432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1289876767}
-  moveSpeed: 12
+  moveSpeed: 10
   gravity: -9.81
   groundCheck: {fileID: 1968321015}
   groundDistance: 0.4
@@ -27951,6 +27956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demonio: {fileID: 534623693}
+  flame: {fileID: 0}
   barraDemon: {fileID: 0}
 --- !u!4 &1415640005
 Transform:

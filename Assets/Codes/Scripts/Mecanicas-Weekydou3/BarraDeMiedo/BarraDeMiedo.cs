@@ -15,6 +15,10 @@ public class BarraDeMiedo : MonoBehaviour
 
     public bool demonAlive = false;
 
+    public float daño = 0f;
+
+    public float tgolpe = 2f;
+
     public Doubulia1 doubuliaObject;
     void Start()
     {
@@ -49,10 +53,20 @@ public class BarraDeMiedo : MonoBehaviour
         if(doubuliaObject != null){
             float tF = scriptFlash.timeNotFlashing;
             if(doubuliaObject.jugadorEnVista && tF > 0){
-                fearBar = Mathf.Min(fearBar + 5f * Time.deltaTime, 100f);
+                fearBar = Mathf.Min(fearBar + 2f * Time.deltaTime, 100f);
+                if(doubuliaObject.dist < 4f){
+                    tgolpe += Time.deltaTime;
+                    if(tgolpe > Random.Range(0.5f, 2.5f)){
+                        float rand = Random.Range(5f, 13f);
+                        daño += rand;
+                        fearBar = rand + fearBar;
+                        tgolpe = 0f;
+                    }
+                }
             }
             else{
-                fearBar = Mathf.Max(fearBar - 1f * Time.deltaTime, 0.01f);
+                fearBar = Mathf.Max(fearBar - 2f * Time.deltaTime, 0.01f + daño);
+                daño = Mathf.Max(daño - 0.3f * Time.deltaTime, 0.01f);
             }
         }
         else{

@@ -12,6 +12,7 @@ public class Doubulia1 : MonoBehaviour
     public float Velocidad;
     public NavMeshAgent agent;
 
+    public float dist;
     public ParticleSystem fuego;
     public ParticleSystem explosionp;
     public Transform explosion;
@@ -33,6 +34,7 @@ public class Doubulia1 : MonoBehaviour
     private int layer = 8;
     private int interactLayers;
     private Transform player;
+    private playerMovement mov;
     public List<Transform> objetivosAleatorios; // Lista de puntos de destino secundarios
     public int objetivoActual = 0;
     public string tagObjetivo = "Puerta";
@@ -68,6 +70,7 @@ public class Doubulia1 : MonoBehaviour
         PIntObj = GameObject.FindWithTag("MainCamera");
         roomDoor = GameObject.FindWithTag("Door");
         player = PIntObj.GetComponent<Transform>();
+        mov = GameObject.FindWithTag("Player").GetComponent<playerMovement>();
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
@@ -92,7 +95,7 @@ public class Doubulia1 : MonoBehaviour
     void Update()
     {
         agent.speed = Velocidad;
-
+        mov.moveSpeed = 9.5f;
         if (cambiandoDeObjetivo)
         {
             // Verificar si llegamos al objetivo aleatorio
@@ -170,21 +173,27 @@ public class Doubulia1 : MonoBehaviour
             killDemon();
         }
        
-        float dist = Vector3.Distance(transform.position, Objetivo.position);
+        dist = Vector3.Distance(transform.position, Objetivo.position);
 
         if (dist >= 4.0f)
         {
             MiAnimator.SetBool("attack",false);
-            Walk();
+            
             if(tocandoFuego){
                 Scream();
             }
+            else{
+                Walk();
+            }
         }
-        if(dist < 3.0f){
+        if(dist < 4.0f){
             MiAnimator.SetBool("attack",true);
-            Walk();
+            
             if(tocandoFuego){
                 Scream();
+            }
+            else{
+                Walk();
             }
         }
 
@@ -226,6 +235,7 @@ public class Doubulia1 : MonoBehaviour
     {
         if (lifeBar >= 100)
         {
+            mov.moveSpeed = 6.5f;
             key.parent = null;
             
             jugadorEnVista = false;

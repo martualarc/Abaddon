@@ -3,6 +3,8 @@ using UnityEngine;
 public class SpawnNivel5 : MonoBehaviour
 {
     public GameObject demonio;
+
+    public GameObject flame;
     private BarraDeMiedo bMiedo;
     private Flashlight scriptFlash;
     public ScriptBarraDemon barraDemon;
@@ -13,7 +15,7 @@ public class SpawnNivel5 : MonoBehaviour
         bMiedo.enabled = true;
 
         barraDemon = GameObject.Find("barraDemon").GetComponent<ScriptBarraDemon>();
-
+        flame = GameObject.FindGameObjectWithTag("Flame");
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
         // Desactivar el demonio al inicio
         //demonio.SetActive(false);
@@ -39,5 +41,6 @@ public class SpawnNivel5 : MonoBehaviour
         bMiedo.demonAlive = true;
         scriptFlash.demonAlive = true;
         barraDemon.enabled = true;
+        flame.SetActive(true);
     }
 }
