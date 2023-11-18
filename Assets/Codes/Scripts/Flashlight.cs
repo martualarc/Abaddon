@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Flashlight: MonoBehaviour {
     //inicializar acceso a scripts de demonios
@@ -35,7 +36,7 @@ public class Flashlight: MonoBehaviour {
             spot.enabled = false;
         }
         
-        if(isFlashing)
+        if(isFlashing || SceneManager.GetActiveScene().name == "hall")
         {
             timeNotFlashing = 0;
             timeFlashing += Time.deltaTime;
@@ -43,7 +44,7 @@ public class Flashlight: MonoBehaviour {
         else
         {
             timeFlashing = 0;
-            if(demonAlive){
+            if(demonAlive && SceneManager.GetActiveScene().name != "hall"){
                 timeNotFlashing += Time.deltaTime;
             }
         }

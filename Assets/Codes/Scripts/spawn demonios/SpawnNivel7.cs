@@ -11,7 +11,7 @@ public class SpawnNivel7 : MonoBehaviour
     void Start()
     {
         bMiedo = GameObject.FindWithTag("Player").GetComponent<BarraDeMiedo>();
-        bMiedo.enabled = true;
+        bMiedo.enabled = false;
 
         barraDemon = GameObject.Find("barraDemon").GetComponent<ScriptBarraDemon>();
 
@@ -40,5 +40,6 @@ public class SpawnNivel7 : MonoBehaviour
         bMiedo.demonAlive = true;
         scriptFlash.demonAlive = true;
         barraDemon.enabled = true;
+        bMiedo.enabled = true;
     }
 }
