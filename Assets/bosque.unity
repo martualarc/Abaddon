@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845be303c89253b49b5f2df71fd66dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 1
+  num: 5
   isKey: 0
   keySound: {fileID: 8300000, guid: 91a1f67cd899526488e7fb9793e535af, type: 3}
 --- !u!114 &145588909
@@ -690,6 +690,9 @@ MonoBehaviour:
   sceneToLoad: 
   exitName: 
   demonAlive: 0
+  "da\xF1o": 0
+  tgolpe: 2
+  doubuliaObject: {fileID: 0}
 --- !u!114 &145588910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,6 +2230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraDemon: {fileID: 0}
   demonLife: {fileID: 0}
+  doubuliaLife: {fileID: 0}
 --- !u!1 &629845285
 GameObject:
   m_ObjectHideFlags: 0

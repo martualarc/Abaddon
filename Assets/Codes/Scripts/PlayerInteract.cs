@@ -146,8 +146,7 @@ public class PlayerInteract : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, demonLayers))
             {
-                scriptDem = hit.collider.GetComponent<Demonio>(); //guarda cualquier objeto con clase heredada de demonio
-                if (scriptDem != null)
+                if (hit.collider.GetComponent<Demonio>() != null || hit.collider.GetComponent<Doubulia1>() != null)
                 {
                     scriptFlash.isFlashing = true;
                     Debug.Log("Flasheando demonio");

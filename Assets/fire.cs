@@ -18,7 +18,7 @@ public class fire : MonoBehaviour
     private BarraDeMiedo bMiedo;
     [SerializeField] public Transform parentObject;
     [SerializeField] public Transform targetObject;
-    public bool quemando = false;
+    public bool quemando;
 
     void Start()
     {
@@ -34,16 +34,15 @@ public class fire : MonoBehaviour
         if (Input.GetKey(activarLinternaKey) && bateriaActual > 0 && tieneFuego)
         {
             bateriaActual -= consumoPorSegundo * Time.deltaTime;
-            
+            linterna.Play();            
             fuego.Play();
-            linterna.Play();
             quemando = true;
         }
         else
         {
             quemando = false;
-            fuego.Stop();
             linterna.Stop();
+            fuego.Stop();
         }
 
         // Recoger una pila y recargar la carga

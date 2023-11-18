@@ -51,6 +51,8 @@ public class Doubulia1 : MonoBehaviour
     public PlayerInteract scriptPInteract;
     public Flashlight scriptFlash;
     public fire scriptfire;
+    public float tF;
+    public bool fire;
     private GameObject roomDoor;
     private Collider dCollider;
 
@@ -258,8 +260,8 @@ public class Doubulia1 : MonoBehaviour
    
     void reduceLifeBar()
     {
-        float tF = scriptFlash.timeFlashing;
-        bool fire = scriptfire.quemando;
+        tF = scriptFlash.timeFlashing;
+        fire = scriptfire.quemando;
         
         if ((tF > 0) && fire)
         {

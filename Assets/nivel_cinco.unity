@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.226
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.040795665, g: 0.05107342, b: 0.06939337, a: 0.226}
+  m_IndirectSpecularColor: {r: 0.040795743, g: 0.051073603, b: 0.06939366, a: 0.226}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   linterna: {fileID: 198081784105432511}
   fuego: {fileID: 198000014960904177}
   bateriaMaxima: 100
-  consumoPorSegundo: 5
+  consumoPorSegundo: 4
   recargaPorPila: 15
   activarLinternaKey: 324
   pila:
@@ -11266,7 +11266,6 @@ GameObject:
   - component: {fileID: 534623697}
   - component: {fileID: 534623698}
   - component: {fileID: 534623699}
-  - component: {fileID: 534623695}
   m_Layer: 6
   m_Name: doubulia
   m_TagString: Demon
@@ -11296,28 +11295,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &534623695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534623693}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4653b1f891e389458d4e9e70e99865f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeBar: 0
-  maxlifeBar: 100
-  isNear: 0
-  disappearTime: 10
-  persecutionVelocity: 0.5
-  range: 4
-  dificultad: 0
-  PIntObj: {fileID: 0}
-  scriptPInteract: {fileID: 0}
-  scriptFlash: {fileID: 0}
 --- !u!4 &534623696
 Transform:
   m_ObjectHideFlags: 0
@@ -11414,6 +11391,8 @@ MonoBehaviour:
   scriptPInteract: {fileID: 0}
   scriptFlash: {fileID: 0}
   scriptfire: {fileID: 0}
+  tF: 0
+  fire: 0
   emision: 0
 --- !u!82 &534623699
 AudioSource:
@@ -25403,7 +25382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845be303c89253b49b5f2df71fd66dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 2
+  num: 3
   isKey: 0
   keySound: {fileID: 8300000, guid: 91a1f67cd899526488e7fb9793e535af, type: 3}
 --- !u!114 &1289876764
@@ -37344,7 +37323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraMiedo: {fileID: 1822869445}
-  playerMiedo: {fileID: 1289876761}
+  playerMiedo: {fileID: 0}
 --- !u!114 &1822869445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49430,9 +49409,9 @@ GameObject:
   - component: {fileID: 198000014960904177}
   - component: {fileID: 199000011702514995}
   - component: {fileID: 1000010213239474}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Flames
-  m_TagString: Flame
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49461,9 +49440,9 @@ GameObject:
   - component: {fileID: 4000014625259239}
   - component: {fileID: 198000014983705801}
   - component: {fileID: 199000013860511075}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Flame
-  m_TagString: Flame
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49479,7 +49458,7 @@ GameObject:
   - component: {fileID: 4000014498096175}
   - component: {fileID: 284286927}
   - component: {fileID: 1000010903554204}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Flame
   m_TagString: Flame
   m_Icon: {fileID: 0}
@@ -49636,9 +49615,9 @@ GameObject:
   - component: {fileID: 4841532624114309}
   - component: {fileID: 198081784105432511}
   - component: {fileID: 199783317850530845}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Light
-  m_TagString: Flame
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

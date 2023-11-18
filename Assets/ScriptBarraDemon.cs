@@ -9,27 +9,31 @@ public class ScriptBarraDemon : MonoBehaviour
     public Doubulia1 doubuliaLife;
     private void Start()
     {
-        demonLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Demonio>();
-        barraDemon = GetComponent<Slider>();
-        barraDemon.maxValue = demonLife.maxlifeBar;
-        barraDemon.value = demonLife.lifeBar;
+        if (GameObject.FindGameObjectWithTag("Demon").GetComponent<Demonio>() != null) {
+            demonLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Demonio>();
+            barraDemon = GetComponent<Slider>();
+            barraDemon.maxValue = demonLife.maxlifeBar;
+            barraDemon.value = demonLife.lifeBar;
+        }
         
-        doubuliaLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
-        if(doubuliaLife != null){
+        else {
+            doubuliaLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
+            barraDemon = GetComponent<Slider>();
             barraDemon.maxValue = doubuliaLife.maxlifeBar;
             barraDemon.value = doubuliaLife.lifeBar;
         }
     }
     private void Update()
     {
-        doubuliaLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
-        demonLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Demonio>();
-        if(doubuliaLife != null){
-            SetLife(doubuliaLife.lifeBar);
-        }
-        else{
+        if (GetComponent<Demonio>() != null) {
+            demonLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Demonio>();
             SetLife(demonLife.lifeBar);
         }
+        
+        else {
+            doubuliaLife = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
+                SetLife(doubuliaLife.lifeBar);
+    }
     }
     public void SetLife(float life)
     {
