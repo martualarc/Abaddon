@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0013444603, g: 0.00080529216, b: 0.0012510257, a: 1}
+  m_IndirectSpecularColor: {r: 0.0013609778, g: 0.00081917713, b: 0.001267984, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -246,7 +246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 215421455}
   - component: {fileID: 215421454}
-  - component: {fileID: 215421453}
   - component: {fileID: 215421456}
   m_Layer: 0
   m_Name: audio
@@ -255,18 +254,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &215421453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215421452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a8171f55c108f4a8793781f4f7ac2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &215421454
 AudioSource:
   m_ObjectHideFlags: 0
@@ -405,7 +392,6 @@ GameObject:
   - component: {fileID: 249601345}
   - component: {fileID: 249601344}
   - component: {fileID: 249601343}
-  - component: {fileID: 249601348}
   m_Layer: 0
   m_Name: video techo
   m_TagString: Untagged
@@ -524,18 +510,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.087}
---- !u!114 &249601348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249601342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e61d65062749c429ca51f546369b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &383078651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,7 +596,6 @@ GameObject:
   - component: {fileID: 386214778}
   - component: {fileID: 386214777}
   - component: {fileID: 386214776}
-  - component: {fileID: 386214781}
   m_Layer: 0
   m_Name: video piso
   m_TagString: Untagged
@@ -741,18 +714,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.087}
---- !u!114 &386214781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386214775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e61d65062749c429ca51f546369b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &387687305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 647a098ac19a9504ea02872319c753d7, type: 3}
@@ -4084,7 +4045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71fc8c313d842c940a87e4fdc3b98b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoParaSpawnear: {fileID: 2083055622}
   tiempoParaSpawnear: 26
 --- !u!1 &2096678642 stripped
 GameObject:
