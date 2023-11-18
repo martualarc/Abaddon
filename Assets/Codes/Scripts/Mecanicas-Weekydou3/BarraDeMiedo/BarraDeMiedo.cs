@@ -18,6 +18,7 @@ public class BarraDeMiedo : MonoBehaviour
     public float daño = 0f;
 
     public float tgolpe = 2f;
+    public AudioSource gp;
 
     public Doubulia1 doubuliaObject;
     void Start()
@@ -28,9 +29,21 @@ public class BarraDeMiedo : MonoBehaviour
     }
     private void Update()
     {
+        if(GameObject.Find("Audio") != null){
+            gp = GameObject.Find("Audio").GetComponents<AudioSource>()[5];
+        }
+        else{}
         sceneToLoad = getStrings.sceneToLoad;
         exitName = getStrings.exitName;
-        doubuliaObject = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
+        GameObject d = GameObject.FindGameObjectWithTag("Demon") ;
+        if(d != null){
+            if(GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>() != null){
+                doubuliaObject = GameObject.FindGameObjectWithTag("Demon").GetComponent<Doubulia1>();
+            }
+        }else{
+            //Debug.Log("no hay demonio");
+        }
+
         if(demonAlive)
         {
             reaparecer();
@@ -56,11 +69,12 @@ public class BarraDeMiedo : MonoBehaviour
                 fearBar = Mathf.Min(fearBar + 2f * Time.deltaTime, 100f);
                 if(doubuliaObject.dist < 4f){
                     tgolpe += Time.deltaTime;
-                    if(tgolpe > Random.Range(0.5f, 2.5f)){
+                    if(tgolpe > Random.Range(1f, 3f)){
                         float rand = Random.Range(5f, 13f);
                         daño += rand;
                         fearBar = rand + fearBar;
                         tgolpe = 0f;
+                        gp.Play();
                     }
                 }
             }
@@ -83,6 +97,7 @@ public class BarraDeMiedo : MonoBehaviour
         PlayerPrefs.SetString("LastExitName",exitName);
         SceneManager.LoadScene(sceneToLoad);
         demonAlive = false;
+        fearBar = 0f;
     }
 
 }

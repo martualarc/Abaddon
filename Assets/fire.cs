@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public class fire : MonoBehaviour
 {
     public ParticleSystem linterna; // El componente de luz de la linterna
@@ -46,6 +46,7 @@ public class fire : MonoBehaviour
         }
 
         // Recoger una pila y recargar la carga
+        if(pila[1] != null){
         foreach (Transform objetoTransform in pila)
         {
             float distancia = Vector3.Distance(transform.position, objetoTransform.position);
@@ -56,6 +57,10 @@ public class fire : MonoBehaviour
                 objetoTransform.position = new Vector3(Random.Range(-18f, 20f), 1.5f, Random.Range(-8f, 60f));
             }
         }
+        }
+        else{
+            //
+        }
 
         if(tieneFuego){
             transform.parent = parentObject;
@@ -65,6 +70,12 @@ public class fire : MonoBehaviour
         // Asegurarse de que la carga no se agote más allá del mínimo
         bateriaActual = Mathf.Max(bateriaActual, 0);
 
+        if(SceneManager.GetActiveScene().name == "nivel_cinco"){
+            gameObject.SetActive(true);
+        }
+        else{
+            gameObject.SetActive(false);
+        }
         if(bMiedo.demonAlive == false){
             gameObject.SetActive(false);
         }

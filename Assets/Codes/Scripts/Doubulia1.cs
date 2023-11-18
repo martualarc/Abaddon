@@ -19,8 +19,11 @@ public class Doubulia1 : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource explosions;
 
+    public AudioSource resp;
+    public AudioSource puerta;
+
     public AudioClip pasos;
-    public AudioClip grito;
+    public AudioSource grito;
     // Update is called once per frame
 
     [SerializeField] public float lifeBar = 0f;
@@ -61,6 +64,7 @@ public class Doubulia1 : MonoBehaviour
     private BarraDeMiedo bMiedo;
     private RainEffect rainEffect;
     public float emision = 0f;
+    private GameObject flame;
     
     private bool tocandoFuego = false;
     void Start()
@@ -73,6 +77,7 @@ public class Doubulia1 : MonoBehaviour
         roomDoor = GameObject.FindWithTag("Door");
         player = PIntObj.GetComponent<Transform>();
         mov = GameObject.FindWithTag("Player").GetComponent<playerMovement>();
+        Objetivo = GameObject.FindWithTag("Player").GetComponent<Transform>();
         scriptPInteract = PIntObj.GetComponent<PlayerInteract>();
         dCollider = roomDoor.GetComponent<Collider>();
         dCollider.isTrigger = false;
@@ -83,6 +88,7 @@ public class Doubulia1 : MonoBehaviour
         scriptFlash = GameObject.FindWithTag("Linterna").GetComponent<Flashlight>();
 
         scriptfire = GameObject.FindWithTag("Flame").GetComponent<fire>();
+        flame = GameObject.FindWithTag("Flame");
 
         isNear = false;
         interactLayers = (1 << layer);
@@ -98,6 +104,7 @@ public class Doubulia1 : MonoBehaviour
     {
         agent.speed = Velocidad;
         mov.moveSpeed = 9.5f;
+        flame.SetActive(true);
         if (cambiandoDeObjetivo)
         {
             // Verificar si llegamos al objetivo aleatorio
@@ -107,6 +114,7 @@ public class Doubulia1 : MonoBehaviour
                 {
                     CambiarAlObjetivoPrincipal();
                     tiempoEsperaActual = 0.0f;
+                    resp.Play();
                 }
             
         }
@@ -126,6 +134,14 @@ public class Doubulia1 : MonoBehaviour
                         tiempoEsperaActual = 0.0f; // Reiniciar el contador de tiempo de espera
                         CambiarDeObjetivoAleatorio();
                         break;
+                    }
+                    if (tiempoEsperaActual >= 6.0f && tiempoEsperaActual <= 6.1f)
+                    {
+                        resp.Play();
+                    }
+                    if (tiempoEsperaActual >= 1.0f && tiempoEsperaActual <= 1.1f)
+                    {
+                        puerta.Play();
                     }
                 }
             }
@@ -226,9 +242,8 @@ public class Doubulia1 : MonoBehaviour
         }
     }
     void Scream(){
-        if(!audioSource.isPlaying){
-            audioSource.clip = grito;
-            audioSource.Play();
+        if(!grito.isPlaying){
+            grito.Play();
             MiAnimator.SetBool("light",true);
         }
     }
@@ -274,6 +289,9 @@ public class Doubulia1 : MonoBehaviour
             {
                 fuego.Play();
             }
+            if(!grito.isPlaying){
+                grito.Play();
+            }
             Velocidad = Mathf.Lerp(Velocidad, 3, Time.deltaTime * 10);
             emision = 0f;
         }
@@ -282,12 +300,19 @@ public class Doubulia1 : MonoBehaviour
             tocandoFuego = false;
             //Debug.Log("no se quema" + emision);
             emision += Time.deltaTime;
+            
             if(emision >= 3.5f){
                 fuego.Stop();
+                if(grito.isPlaying){
+                    grito.Stop();
+                }
             }
             else{
                 Velocidad = Mathf.Lerp(Velocidad, 3, Time.deltaTime * 10);
                 MiAnimator.SetBool("light",true);
+                if(!grito.isPlaying){
+                grito.Play();
+                }
             }
 
         }
